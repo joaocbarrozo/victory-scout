@@ -19,7 +19,7 @@
             <h3 id="game-details-text" class="bg-secondary text-center text-light m-1">Local data e horário</h3>
         </div>
         <!-- Controls container-->
-        <div id="controls-container" class="d-flex vw-95 m-1 justify-content-center">
+        <div id="controls-container" class="d-flex justify-content-center vw-95 m-1">
             <button id="btn-pass" class="btn btn-primary m-1" data-bs-toggle="modal"
                 data-bs-target="#pass-modal">PASSE</button>
             <button id="btn-dribble" class="btn btn-primary m-1" data-bs-toggle="modal"
@@ -27,7 +27,9 @@
             <button id="btn-shot" class="btn btn-primary m-1" data-bs-toggle="modal"
                 data-bs-target="#shot-modal">FINALIZAÇÃO</button>
             <button id="btn-contest" class="btn btn-primary m-1" data-bs-toggle="modal"
-                data-bs-target="#contest-modal">DIUSPUTA</button>
+                data-bs-target="#contest-modal">DISPUTA</button>
+            <button id="btn-stats" class="btn btn-primary m-1" data-bs-toggle="modal"
+                data-bs-target="#stats-modal">ESTATISTICAS</button>
         </div>
         <!-- Pass modal-->
         <div id="pass-modal" class="modal fade" tabindex="-1">
@@ -238,6 +240,67 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <button id="btn-save-contest" type="button" class="btn btn-primary"
                             data-bs-dismiss="modal">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats modal-->
+        <div id="stats-modal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Estatisticas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table id="stats-table" class="table table-responsive table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>Gols</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Assistências</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Passes Certos / Errados</td>
+                                    <td><span>0</span> / <span>0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dribles Certos / Errados</td>
+                                    <td><span>0</span> / <span>0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Desarmes</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Interceptações</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Bolas Perdidas</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Faltas Cometidas</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Faltas Sofridas</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Cartões</td>
+                                    <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
