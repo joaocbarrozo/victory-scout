@@ -44,16 +44,16 @@
                             <label for="pass-minute">Minuto</label>
                             <input type="number" name="pass-minute" id="pass-minute-input" min="0" max="120"
                                 class="form-control">
-                            <label for="pass-result">Resultado</label>
-                            <select name="pass-result" id="pass-result-select" class="form-select">
-                                <option value="CERTO">CERTO</option>
-                                <option value="ERRADO">ERRADO</option>
-                            </select>
                             <label for="pass-type">Tipo</label>
                             <select name="pass-type" id="pass-type-select" class="form-select">
                                 <option value="CURTO">CURTO</option>
                                 <option value="LONGO">LONGO</option>
                                 <option value="CRUZAMENTO">CRUZAMENTO</option>
+                            </select>
+                            <label for="pass-result">Resultado</label>
+                            <select name="pass-result" id="pass-result-select" class="form-select">
+                                <option value="CERTO">CERTO</option>
+                                <option value="ERRADO">ERRADO</option>
                             </select>
                             <label for="pass-location">Local</label>
                             <select name="pass-location" id="pass-location-select" class="form-select">
@@ -99,15 +99,15 @@
                             <label for="dribble-minute">Minuto</label>
                             <input type="number" name="pass-minute" id="dribble-minute-input" min="0" max="120"
                                 class="form-control">
-                            <label for="dribble-result">Resultado</label>
-                            <select name="dribble-result" id="dribble-result-select" class="form-select">
-                                <option value="CERTO">CERTO</option>
-                                <option value="ERRADO">ERRADO</option>
-                            </select>
                             <label for="dribble-type">Tipo</label>
                             <select name="dribble-type" id="dribble-type-select" class="form-select">
                                 <option value="CURTO">CURTO</option>
                                 <option value="LEM VELOCIDADE">EM VELOCIDADE</option>
+                            </select>
+                            <label for="dribble-result">Resultado</label>
+                            <select name="dribble-result" id="dribble-result-select" class="form-select">
+                                <option value="CERTO">CERTO</option>
+                                <option value="ERRADO">ERRADO</option>
                             </select>
                             <label for="dribble-location">Local</label>
                             <select name="dribble-location" id="dribble-location-select" class="form-select">
@@ -152,16 +152,16 @@
                             <label for="shot-minute">Minuto</label>
                             <input type="number" name="shot-minute" id="shot-minute-input" min="0" max="120"
                                 class="form-control">
-                            <label for="shot-result">Resultado</label>
-                            <select name="shot-result" id="shot-result-select" class="form-select">
-                                <option value="NO GOL">NO GOL</option>
-                                <option value="PRA FORA">PRA FORA</option>
-                            </select>
                             <label for="shot-type">Tipo</label>
                             <select name="shot-type" id="shot-type-select" class="form-select">
                                 <option value="CHUTE">CHUTE</option>
                                 <option value="CABEÇADA">CABEÇADA</option>
                                 <option value="ACROBÁTICA">ACROBÁTICA</option>
+                            </select>
+                            <label for="shot-result">Resultado</label>
+                            <select name="shot-result" id="shot-result-select" class="form-select">
+                                <option value="NO GOL">NO GOL</option>
+                                <option value="PRA FORA">PRA FORA</option>
                             </select>
                             <label for="shot-location">Local</label>
                             <select name="shot-location" id="shot-location-select" class="form-select">
@@ -205,15 +205,15 @@
                             <label for="contest-minute">Minuto</label>
                             <input type="number" name="contest-minute" id="contest-minute-input" min="0" max="120"
                                 class="form-control">
-                            <label for="contest-result">Resultado</label>
-                            <select name="contest-result" id="contest-result-select" class="form-select">
-                                <option value="GANHA">GANHA</option>
-                                <option value="PERDIDA">PERDIDA</option>
-                            </select>
                             <label for="contest-type">Tipo</label>
                             <select name="contest-type" id="contest-type-select" class="form-select">
                                 <option value="AEREA">AEREA</option>
                                 <option value="NO CHAO">NO CHAO</option>
+                            </select>
+                            <label for="contest-result">Resultado</label>
+                            <select name="contest-result" id="contest-result-select" class="form-select">
+                                <option value="GANHA">GANHA</option>
+                                <option value="PERDIDA">PERDIDA</option>
                             </select>
                             <label for="contest-location">Local</label>
                             <select name="contest-location" id="contest-location-select" class="form-select">
@@ -254,7 +254,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <table id="stats-table" class="table table-responsive table-hover">
+                        <table id="stat-table" class="table table-responsive table-hover">
                             <tbody>
                                 <tr>
                                     <td>Gols</td>
@@ -294,7 +294,8 @@
                                 </tr>
                                 <tr>
                                     <td>Cartões</td>
-                                    <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span></td>
+                                    <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -313,11 +314,62 @@
 
             </ol>
         </div>
+        <!-- Stats container-->
+        <div id="stats-container" class="vw-95 m-1">
+            <h3 id="stats-text" class="text-center bg-primary text-light m-1">Estatísticas</h3>
+            <table id="stats-table" class="table table-responsive table-hover">
+                <tbody id="stats-table-body">
+
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        // Load events from local storage function
+        document.addEventListener('DOMContentLoaded', getEvents);
+        function getEvents() {
+            let events;
+            if (localStorage.getItem('events') === null) {
+                events = [];
+            } else {
+                events = JSON.parse(localStorage.getItem('events'));
+            }
+            events.forEach((event) => {
+                let newLi = document.createElement("li");
+                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
+                newLi.textContent = event;
+
+                const deleteBtn = document.createElement('i');
+                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
+                deleteBtn.onclick = function () {
+                    const itemName = this.parentElement.textContent.trim();
+                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
+                        this.parentElement.remove();
+                        removeEventFromLocalStorage(event);
+                    }
+                };
+                newLi.appendChild(deleteBtn);
+                eventList.appendChild(newLi);
+            });
+        };
+
+        // Object store stats
+        let savedStats = localStorage.getItem('objStats');
+        let objStats = savedStats ? JSON.parse(savedStats) : {};
+        console.log(objStats);
+
+        // Function to add properties to objStats
+        function addStats(obj, prop) {
+            if (obj.hasOwnProperty(prop)) {
+                obj[prop] += 1;
+            } else {
+                obj[prop] = 1;
+            }
+        };
+
         // Variable events list
         const eventList = document.getElementById("events-list");
         // Create pass event
@@ -330,8 +382,15 @@
             const passDetail = document.getElementById("pass-detail-select").value;
             let newLi = document.createElement("li");
             newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-            newLi.textContent = `${passMinute}" - PASSE - ${passResult} - ${passType} - ${passLocation} - ${passSide} - ${passDetail}`;
+            newLi.textContent = `${passMinute}" - PASSE - ${passType} - ${passResult} - ${passLocation} - ${passSide} - ${passDetail}`;
+            // Add passes to objStats
+            addStats(objStats, `PASSE - ${passType} - ${passResult}`);
+            addStats(objStats, `PASSE - ${passResult} - ${passLocation} - ${passSide}`);
+            addStats(objStats, `PASSE - ${passResult} - ${passDetail}`);
+            // Save objStats on the local storage
+            localStorage.setItem('objStats', JSON.stringify(objStats));
 
+            // Function to create a delete icon to remove events
             const deleteBtn = document.createElement('i');
             deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
             deleteBtn.onclick = function () {
@@ -357,8 +416,15 @@
             const dribbleDetail = document.getElementById("dribble-detail-select").value;
             let newLi = document.createElement("li");
             newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-            newLi.textContent = `${dribbleMinute}" - DRIBLE - ${dribbleResult} - ${dribbleType} - ${dribbleLocation} - ${dribbleSide} - ${dribbleDetail}`;
+            newLi.textContent = `${dribbleMinute}" - DRIBLE - ${dribbleType} - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide} - ${dribbleDetail}`;
+            // Add dribbles to objStats
+            addStats(objStats, `DRIBLE - ${dribbleType} - ${dribbleResult}`);
+            addStats(objStats, `DRIBLE - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide}`);
+            addStats(objStats, `DRIBLE - ${dribbleResult} - ${dribbleDetail}`);
+            // Save objStats on the local storage
+            localStorage.setItem('objStats', JSON.stringify(objStats));
 
+            // Function to create a delete icon to remove events
             const deleteBtn = document.createElement('i');
             deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
             deleteBtn.onclick = function () {
@@ -384,8 +450,15 @@
             const shotDetail = document.getElementById("shot-detail-select").value;
             let newLi = document.createElement("li");
             newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-            newLi.textContent = `${shotMinute}" - FINALIZAÇÃO - ${shotResult} - ${shotType} - ${shotLocation} - ${shotSide} - ${shotDetail}`;
+            newLi.textContent = `${shotMinute}" - FINALIZAÇÃO - ${shotType} - ${shotResult} - ${shotLocation} - ${shotSide} - ${shotDetail}`;
+            // Add pass to objStats
+            addStats(objStats, `FINALIZAÇÃO - ${shotType} - ${shotResult}`);
+            addStats(objStats, `FINALIZAÇÃO - ${shotResult} - ${shotLocation} - ${shotSide}`);
+            addStats(objStats, `FINALIZAÇÃO - ${shotResult} - ${shotDetail}`);
+            // Save objStats on the local storage
+            localStorage.setItem('objStats', JSON.stringify(objStats));
 
+            // Function to create a delete icon to remove events
             const deleteBtn = document.createElement('i');
             deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
             deleteBtn.onclick = function () {
@@ -411,8 +484,15 @@
             const contestDetail = document.getElementById("contest-detail-select").value;
             let newLi = document.createElement("li");
             newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-            newLi.textContent = `${contestMinute}" - DISPUTA - ${contestResult} - ${contestType} - ${contestLocation} - ${contestSide} - ${contestDetail}`;
+            newLi.textContent = `${contestMinute}" - DISPUTA - ${contestType} - ${contestResult} - ${contestLocation} - ${contestSide} - ${contestDetail}`;
+            // Add pass to objStats
+            addStats(objStats, `DISPUTA - ${contestType} - ${contestResult}`);
+            addStats(objStats, `DISPUTA - ${contestResult} - ${contestLocation} - ${contestSide}`);
+            addStats(objStats, `DISPUTA - ${contestResult} - ${contestDetail}`);
+            // Save objStats on the local storage
+            localStorage.setItem('objStats', JSON.stringify(objStats));
 
+            // Function to create a delete icon to remove events
             const deleteBtn = document.createElement('i');
             deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
             deleteBtn.onclick = function () {
@@ -428,6 +508,18 @@
             saveEventToLocalStorage(newLi.textContent);
         });
 
+        // Add stats to stats table
+        const statsTableBody = document.getElementById("stats-table-body");
+        statsTableBody.innerHTML = "";
+        Object.keys(objStats).forEach(key => {
+            const tr = document.createElement('tr');
+            const tdKey = document.createElement('td');
+            const tdValue = document.createElement('td');
+            tdKey.textContent = key;
+            tdValue.textContent = objStats[key];
+            statsTableBody.appendChild(tdKey);
+            statsTableBody.appendChild(tdValue);
+        });
 
         // Save on local storage function
         function saveEventToLocalStorage(event) {
@@ -457,33 +549,6 @@
             localStorage.setItem('events', JSON.stringify(events));
         }
 
-        // Load events from local storage function
-        document.addEventListener('DOMContentLoaded', getEvents);
-        function getEvents() {
-            let events;
-            if (localStorage.getItem('events') === null) {
-                events = [];
-            } else {
-                events = JSON.parse(localStorage.getItem('events'));
-            }
-            events.forEach((event) => {
-                let newLi = document.createElement("li");
-                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                newLi.textContent = event;
-
-                const deleteBtn = document.createElement('i');
-                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
-                deleteBtn.onclick = function () {
-                    const itemName = this.parentElement.textContent.trim();
-                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
-                        this.parentElement.remove();
-                        removeEventFromLocalStorage(event);
-                    }
-                };
-                newLi.appendChild(deleteBtn);
-                eventList.appendChild(newLi);
-            });
-        }
     </script>
 </body>
 
