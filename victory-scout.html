@@ -8,6 +8,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Victory Scout</title>
+    <style>
+        #field {
+            background-image: url("https://raw.githubusercontent.com/joaocbarrozo/victory-scout/refs/heads/main/img/field.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
@@ -336,63 +344,141 @@
             </div>
 
         </div>
-         <!-- Field stats container-->
-         <div id="field -stats-container" class="vw-95 m-1 mx-auto">
+        <!-- Field stats container-->
+        <div id="field -stats-container" class="vw-95 m-1 mx-auto">
             <h3 id="field-stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#field-stats-container">Setores do Campo</h3>
-            <div id="field-stats-container" class="collapse">
-                
+            <div id="field-stats-container"  class="collapse">
+                <div id="field">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 1</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 2</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 3</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 4</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 5</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 6</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant text-center align-center">Quadrant 7</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 8</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 9</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>
-        // Execute all functions after the DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Object store stats
-            let objStats = {};
-            // Resume stats variables
-            const goals = document.getElementById("goals");
-            const correctShots = document.getElementById("correct-shots");
-            const incorrectShots = document.getElementById("incorrect-shots");
-            const assists = document.getElementById("assists");
-            const correctPasses = document.getElementById("correct-passes");
-            const incorrectPasses = document.getElementById("incorrect-passes");
-            const correctDribbles = document.getElementById("correct-dribbles");
-            const incorrectDribbles = document.getElementById("incorrect-dribbles");
-            const tackles = document.getElementById("tackles");
-            const interceptions = document.getElementById("interceptions");
-            const turnover = document.getElementById("turnover");
-            const foulsMade = document.getElementById("fouls-made");
-            const foulsSuffered = document.getElementById("fouls-suffered");
-            const yellowCard = document.getElementById("yellow-card");
-            const redCard = document.getElementById("red-card");
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script>
+            // Execute all functions after the DOM is loaded
+            document.addEventListener('DOMContentLoaded', () => {
+                // Object store stats
+                let objStats = {};
+                // Resume stats variables
+                const goals = document.getElementById("goals");
+                const correctShots = document.getElementById("correct-shots");
+                const incorrectShots = document.getElementById("incorrect-shots");
+                const assists = document.getElementById("assists");
+                const correctPasses = document.getElementById("correct-passes");
+                const incorrectPasses = document.getElementById("incorrect-passes");
+                const correctDribbles = document.getElementById("correct-dribbles");
+                const incorrectDribbles = document.getElementById("incorrect-dribbles");
+                const tackles = document.getElementById("tackles");
+                const interceptions = document.getElementById("interceptions");
+                const turnover = document.getElementById("turnover");
+                const foulsMade = document.getElementById("fouls-made");
+                const foulsSuffered = document.getElementById("fouls-suffered");
+                const yellowCard = document.getElementById("yellow-card");
+                const redCard = document.getElementById("red-card");
 
-            // Function Load events from local storage and add to events list
-            function getEvents() {
-                // Load events
-                let events;
-                if (localStorage.getItem('events') === null) {
-                    events = [];
-                } else {
-                    events = JSON.parse(localStorage.getItem('events'));
-                }
-                // Create a <li> for each event
-                events.forEach((event) => {
+                // Function Load events from local storage and add to events list
+                function getEvents() {
+                    // Load events
+                    let events;
+                    if (localStorage.getItem('events') === null) {
+                        events = [];
+                    } else {
+                        events = JSON.parse(localStorage.getItem('events'));
+                    }
+                    // Create a <li> for each event
+                    events.forEach((event) => {
+                        let newLi = document.createElement("li");
+                        newLi.classList.add('d-block', 'ml-3', 'list-group-item');
+                        newLi.textContent = event;
+                        // create a delete button
+                        const deleteBtn = document.createElement('i');
+                        deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
+                        deleteBtn.onclick = function () {
+                            const itemName = this.parentElement.textContent.trim();
+                            if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
+                                this.parentElement.remove();
+                                removeEventFromLocalStorage(event);
+                            }
+                        };
+                        newLi.appendChild(deleteBtn);
+                        if (eventList.firstChild) {
+                            eventList.insertBefore(newLi, eventList.firstChild)
+                        } else {
+                            eventList.appendChild(newLi);
+                        }
+                    });
+                };
+                // Variable events list
+                const eventList = document.getElementById("events-list");
+                // call function to load events
+                getEvents();
+                updateStats();
+
+                // Function to add properties to objStats
+                function addStats(obj, prop) {
+                    if (obj.hasOwnProperty(prop)) {
+                        obj[prop] += 1;
+                    } else {
+                        obj[prop] = 1;
+                    }
+                };
+
+                // Create pass event
+                document.getElementById("btn-save-pass").addEventListener('click', () => {
+                    const passMinute = document.getElementById("pass-minute-input").value;
+                    const passResult = document.getElementById("pass-result-select").value;
+                    const passType = document.getElementById("pass-type-select").value;
+                    const passLocation = document.getElementById("pass-location-select").value;
+                    const passSide = document.getElementById("pass-side-select").value;
+                    const passDetail = document.getElementById("pass-detail-select").value;
                     let newLi = document.createElement("li");
                     newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                    newLi.textContent = event;
-                    // create a delete button
+                    newLi.textContent = `${passMinute}" - PASSE - ${passType} - ${passResult} - ${passLocation} - ${passSide} - ${passDetail}`;
+
+                    // Function to create a delete icon to remove events
                     const deleteBtn = document.createElement('i');
                     deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
                     deleteBtn.onclick = function () {
                         const itemName = this.parentElement.textContent.trim();
                         if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
                             this.parentElement.remove();
-                            removeEventFromLocalStorage(event);
+                            removeEventFromLocalStorage(itemName);
                         }
                     };
                     newLi.appendChild(deleteBtn);
@@ -401,243 +487,198 @@
                     } else {
                         eventList.appendChild(newLi);
                     }
+
+                    saveEventToLocalStorage(newLi.textContent);
+                    updateStats()
                 });
-            };
-            // Variable events list
-            const eventList = document.getElementById("events-list");
-            // call function to load events
-            getEvents();
-            updateStats();
 
-            // Function to add properties to objStats
-            function addStats(obj, prop) {
-                if (obj.hasOwnProperty(prop)) {
-                    obj[prop] += 1;
-                } else {
-                    obj[prop] = 1;
-                }
-            };
+                // Create a dribble event
+                document.getElementById("btn-save-dribble").addEventListener('click', () => {
+                    const dribbleMinute = document.getElementById("dribble-minute-input").value;
+                    const dribbleResult = document.getElementById("dribble-result-select").value;
+                    const dribbleType = document.getElementById("dribble-type-select").value;
+                    const dribbleLocation = document.getElementById("dribble-location-select").value;
+                    const dribbleSide = document.getElementById("dribble-side-select").value;
+                    const dribbleDetail = document.getElementById("dribble-detail-select").value;
+                    let newLi = document.createElement("li");
+                    newLi.classList.add('d-block', 'ml-3', 'list-group-item');
+                    newLi.textContent = `${dribbleMinute}" - DRIBLE - ${dribbleType} - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide} - ${dribbleDetail}`;
 
-            // Create pass event
-            document.getElementById("btn-save-pass").addEventListener('click', () => {
-                const passMinute = document.getElementById("pass-minute-input").value;
-                const passResult = document.getElementById("pass-result-select").value;
-                const passType = document.getElementById("pass-type-select").value;
-                const passLocation = document.getElementById("pass-location-select").value;
-                const passSide = document.getElementById("pass-side-select").value;
-                const passDetail = document.getElementById("pass-detail-select").value;
-                let newLi = document.createElement("li");
-                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                newLi.textContent = `${passMinute}" - PASSE - ${passType} - ${passResult} - ${passLocation} - ${passSide} - ${passDetail}`;
-
-                // Function to create a delete icon to remove events
-                const deleteBtn = document.createElement('i');
-                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
-                deleteBtn.onclick = function () {
-                    const itemName = this.parentElement.textContent.trim();
-                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
-                        this.parentElement.remove();
-                        removeEventFromLocalStorage(itemName);
+                    // Function to create a delete icon to remove events
+                    const deleteBtn = document.createElement('i');
+                    deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
+                    deleteBtn.onclick = function () {
+                        const itemName = this.parentElement.textContent.trim();
+                        const itemNameArr = itemName.split('-').trim();
+                        if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
+                            this.parentElement.remove();
+                            removeEventFromLocalStorage(itemName);
+                            delete objStats[deleteObj_1];
+                            delete objStats[deleteObj_2];
+                            delete objStats[deleteObj_3];
+                        }
+                    };
+                    newLi.appendChild(deleteBtn);
+                    if (eventList.firstChild) {
+                        eventList.insertBefore(newLi, eventList.firstChild)
+                    } else {
+                        eventList.appendChild(newLi);
                     }
-                };
-                newLi.appendChild(deleteBtn);
-                if (eventList.firstChild) {
-                    eventList.insertBefore(newLi, eventList.firstChild)
-                } else {
-                    eventList.appendChild(newLi);
-                }
 
-                saveEventToLocalStorage(newLi.textContent);
-                updateStats()
-            });
-
-            // Create a dribble event
-            document.getElementById("btn-save-dribble").addEventListener('click', () => {
-                const dribbleMinute = document.getElementById("dribble-minute-input").value;
-                const dribbleResult = document.getElementById("dribble-result-select").value;
-                const dribbleType = document.getElementById("dribble-type-select").value;
-                const dribbleLocation = document.getElementById("dribble-location-select").value;
-                const dribbleSide = document.getElementById("dribble-side-select").value;
-                const dribbleDetail = document.getElementById("dribble-detail-select").value;
-                let newLi = document.createElement("li");
-                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                newLi.textContent = `${dribbleMinute}" - DRIBLE - ${dribbleType} - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide} - ${dribbleDetail}`;
-
-                // Function to create a delete icon to remove events
-                const deleteBtn = document.createElement('i');
-                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
-                deleteBtn.onclick = function () {
-                    const itemName = this.parentElement.textContent.trim();
-                    const itemNameArr = itemName.split('-').trim();
-                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
-                        this.parentElement.remove();
-                        removeEventFromLocalStorage(itemName);
-                        delete objStats[deleteObj_1];
-                        delete objStats[deleteObj_2];
-                        delete objStats[deleteObj_3];
-                    }
-                };
-                newLi.appendChild(deleteBtn);
-                if (eventList.firstChild) {
-                    eventList.insertBefore(newLi, eventList.firstChild)
-                } else {
-                    eventList.appendChild(newLi);
-                }
-
-                saveEventToLocalStorage(newLi.textContent);
-                updateStats()
-            });
-
-            // Create shot event
-            document.getElementById("btn-save-shot").addEventListener('click', () => {
-                const shotMinute = document.getElementById("shot-minute-input").value;
-                const shotResult = document.getElementById("shot-result-select").value;
-                const shotType = document.getElementById("shot-type-select").value;
-                const shotLocation = document.getElementById("shot-location-select").value;
-                const shotSide = document.getElementById("shot-side-select").value;
-                const shotDetail = document.getElementById("shot-detail-select").value;
-                let newLi = document.createElement("li");
-                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                newLi.textContent = `${shotMinute}" - FINALIZAÇÃO - ${shotType} - ${shotResult} - ${shotLocation} - ${shotSide} - ${shotDetail}`;
-
-                // Function to create a delete icon to remove events
-                const deleteBtn = document.createElement('i');
-                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
-                deleteBtn.onclick = function () {
-                    const itemName = this.parentElement.textContent.trim();
-                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
-                        this.parentElement.remove();
-                        removeEventFromLocalStorage(itemName);
-                    }
-                };
-                newLi.appendChild(deleteBtn);
-                if (eventList.firstChild) {
-                    eventList.insertBefore(newLi, eventList.firstChild)
-                } else {
-                    eventList.appendChild(newLi);
-                }
-
-                saveEventToLocalStorage(newLi.textContent);
-                updateStats()
-            });
-
-            // Create contest event
-            document.getElementById("btn-save-contest").addEventListener('click', () => {
-                const contestMinute = document.getElementById("contest-minute-input").value;
-                const contestResult = document.getElementById("contest-result-select").value;
-                const contestType = document.getElementById("contest-type-select").value;
-                const contestLocation = document.getElementById("contest-location-select").value;
-                const contestSide = document.getElementById("contest-side-select").value;
-                const contestDetail = document.getElementById("contest-detail-select").value;
-                let newLi = document.createElement("li");
-                newLi.classList.add('d-block', 'ml-3', 'list-group-item');
-                newLi.textContent = `${contestMinute}" - DISPUTA - ${contestType} - ${contestResult} - ${contestLocation} - ${contestSide} - ${contestDetail}`;
-
-                // Function to create a delete icon to remove events
-                const deleteBtn = document.createElement('i');
-                deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
-                deleteBtn.onclick = function () {
-                    const itemName = this.parentElement.textContent.trim();
-                    if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
-                        this.parentElement.remove();
-                        removeEventFromLocalStorage(itemName);
-                    }
-                };
-                newLi.appendChild(deleteBtn);
-                if (eventList.firstChild) {
-                    eventList.insertBefore(newLi, eventList.firstChild)
-                } else {
-                    eventList.appendChild(newLi);
-                }
-
-                saveEventToLocalStorage(newLi.textContent);
-                updateStats();
-            });
-
-            // function to add stats to stats table
-            function updateStats() {
-                // Array with all li tags
-                const eventListItens = document.querySelectorAll('li');
-                objStats = {};
-                // Add stats to objStats
-                eventListItens.forEach(item => {
-                    const arrIemName = item.textContent.split('-');
-                    // EVENT - RESULT - LOCATION - SIDE 
-                    let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
-                    addStats(objStats, statsToAdd);
-                    // EVENT - TYPE - RESULT
-                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
-                    addStats(objStats, statsToAdd);
-                    // EVENT - RESULT - DETAIL
-                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
-                    addStats(objStats, statsToAdd);
-                    // EVENT - RESULT
-                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()}`;
-                    addStats(objStats, statsToAdd);
-                    // EVENT - DETAIL
-                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[6].trim()}`;
-                    addStats(objStats, statsToAdd);
+                    saveEventToLocalStorage(newLi.textContent);
+                    updateStats()
                 });
-                // Add rows to table stats
-                const statsTableBody = document.getElementById("stats-table-body");
-                statsTableBody.innerHTML = "";
-                Object.keys(objStats).forEach(key => {
-                    const tr = document.createElement('tr');
-                    const tdKey = document.createElement('td');
-                    const tdValue = document.createElement('td');
-                    tdKey.textContent = key;
-                    tdValue.textContent = objStats[key];
-                    tr.appendChild(tdKey);
-                    tr.appendChild(tdValue);
-                    statsTableBody.appendChild(tr);
-                });
-                // Add stats to resume stats table
-                goals.textContent = objStats["FINALIZAÇÃO - GOL"] ? objStats["FINALIZAÇÃO - GOL"] : 0;
-                correctShots.textContent = objStats["FINALIZAÇÃO - NO GOL"] ? objStats["FINALIZAÇÃO - NO GOL"] : 0;
-                incorrectShots.textContent = objStats["FINALIZAÇÃO - PRA FORA"] ? objStats["FINALIZAÇÃO - PRA FORA"] : 0;
-                assists.textContent = objStats["PASSE - ASSISTENCIA"] ? objStats["PASSE - ASSISTENCIA"] : 0;
-                correctPasses.textContent = objStats["PASSE - CERTO"] ? objStats["PASSE - CERTO"] : 0;
-                incorrectPasses.textContent = objStats["PASSE - ERRADO"] ? objStats["PASSE - ERRADO"] : 0;
-                correctDribbles.textContent = objStats["DRIBLE - CERTO"] ? objStats["DRIBLE - CERTO"] : 0;
-                incorrectDribbles.textContent = objStats["DRIBLE - ERRADO"] ? objStats["DRIBLE - ERRADO"] : 0;
-                tackles.textContent = objStats["DISPUTA - DESARME"] ? objStats["DISPUTA - DESARME"] : 0;
-                interceptions.textContent = objStats["DISPUTA - INTERCEPTACAO"] ? objStats["DISPUTA - INTERCEPTACAO"] : 0;
-                turnover.textContent = "0";
-                foulsMade.textContent = objStats["DISPUTA - FALTA COMETIDA"] ? objStats["DISPUTA - FALTA COMETIDA"] : 0;
-                foulsSuffered.textContent = objStats["DRIBLE - SOFREU FALTA"] ? objStats["DRIBLE - SOFREU FALTA"] : 0;
-                yellowCard.textContent = "0";
-                redCard.textContent = "0"
-            };
 
-            // Save  eventon local storage function
-            function saveEventToLocalStorage(event) {
-                let events;
-                if (localStorage.getItem('events') === null) {
-                    events = [];
-                } else {
-                    events = JSON.parse(localStorage.getItem('events'));
-                }
-                events.push(event);
-                localStorage.setItem('events', JSON.stringify(events));
-            }
+                // Create shot event
+                document.getElementById("btn-save-shot").addEventListener('click', () => {
+                    const shotMinute = document.getElementById("shot-minute-input").value;
+                    const shotResult = document.getElementById("shot-result-select").value;
+                    const shotType = document.getElementById("shot-type-select").value;
+                    const shotLocation = document.getElementById("shot-location-select").value;
+                    const shotSide = document.getElementById("shot-side-select").value;
+                    const shotDetail = document.getElementById("shot-detail-select").value;
+                    let newLi = document.createElement("li");
+                    newLi.classList.add('d-block', 'ml-3', 'list-group-item');
+                    newLi.textContent = `${shotMinute}" - FINALIZAÇÃO - ${shotType} - ${shotResult} - ${shotLocation} - ${shotSide} - ${shotDetail}`;
 
-            // Remove event from local storage function
-            function removeEventFromLocalStorage(event) {
-                let events;
-                if (localStorage.getItem('events') === null) {
-                    events = [];
-                } else {
-                    events = JSON.parse(localStorage.getItem('events'));
-                }
-                events.forEach((storedEvent, index) => {
-                    if (event === storedEvent) {
-                        events.splice(index, 1);
+                    // Function to create a delete icon to remove events
+                    const deleteBtn = document.createElement('i');
+                    deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
+                    deleteBtn.onclick = function () {
+                        const itemName = this.parentElement.textContent.trim();
+                        if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
+                            this.parentElement.remove();
+                            removeEventFromLocalStorage(itemName);
+                        }
+                    };
+                    newLi.appendChild(deleteBtn);
+                    if (eventList.firstChild) {
+                        eventList.insertBefore(newLi, eventList.firstChild)
+                    } else {
+                        eventList.appendChild(newLi);
                     }
+
+                    saveEventToLocalStorage(newLi.textContent);
+                    updateStats()
                 });
-                localStorage.setItem('events', JSON.stringify(events));
-            }
-        });
-    </script>
+
+                // Create contest event
+                document.getElementById("btn-save-contest").addEventListener('click', () => {
+                    const contestMinute = document.getElementById("contest-minute-input").value;
+                    const contestResult = document.getElementById("contest-result-select").value;
+                    const contestType = document.getElementById("contest-type-select").value;
+                    const contestLocation = document.getElementById("contest-location-select").value;
+                    const contestSide = document.getElementById("contest-side-select").value;
+                    const contestDetail = document.getElementById("contest-detail-select").value;
+                    let newLi = document.createElement("li");
+                    newLi.classList.add('d-block', 'ml-3', 'list-group-item');
+                    newLi.textContent = `${contestMinute}" - DISPUTA - ${contestType} - ${contestResult} - ${contestLocation} - ${contestSide} - ${contestDetail}`;
+
+                    // Function to create a delete icon to remove events
+                    const deleteBtn = document.createElement('i');
+                    deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
+                    deleteBtn.onclick = function () {
+                        const itemName = this.parentElement.textContent.trim();
+                        if (confirm(`Você tem certeza que deseja excluir "${itemName}"?`)) {
+                            this.parentElement.remove();
+                            removeEventFromLocalStorage(itemName);
+                        }
+                    };
+                    newLi.appendChild(deleteBtn);
+                    if (eventList.firstChild) {
+                        eventList.insertBefore(newLi, eventList.firstChild)
+                    } else {
+                        eventList.appendChild(newLi);
+                    }
+
+                    saveEventToLocalStorage(newLi.textContent);
+                    updateStats();
+                });
+
+                // function to add stats to stats table
+                function updateStats() {
+                    // Array with all li tags
+                    const eventListItens = document.querySelectorAll('li');
+                    objStats = {};
+                    // Add stats to objStats
+                    eventListItens.forEach(item => {
+                        const arrIemName = item.textContent.split('-');
+                        // EVENT - RESULT - LOCATION - SIDE 
+                        let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
+                        addStats(objStats, statsToAdd);
+                        // EVENT - TYPE - RESULT
+                        statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
+                        addStats(objStats, statsToAdd);
+                        // EVENT - RESULT - DETAIL
+                        statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
+                        addStats(objStats, statsToAdd);
+                        // EVENT - RESULT
+                        statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()}`;
+                        addStats(objStats, statsToAdd);
+                        // EVENT - DETAIL
+                        statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[6].trim()}`;
+                        addStats(objStats, statsToAdd);
+                    });
+                    // Add rows to table stats
+                    const statsTableBody = document.getElementById("stats-table-body");
+                    statsTableBody.innerHTML = "";
+                    Object.keys(objStats).forEach(key => {
+                        const tr = document.createElement('tr');
+                        const tdKey = document.createElement('td');
+                        const tdValue = document.createElement('td');
+                        tdKey.textContent = key;
+                        tdValue.textContent = objStats[key];
+                        tr.appendChild(tdKey);
+                        tr.appendChild(tdValue);
+                        statsTableBody.appendChild(tr);
+                    });
+                    // Add stats to resume stats table
+                    goals.textContent = objStats["FINALIZAÇÃO - GOL"] ? objStats["FINALIZAÇÃO - GOL"] : 0;
+                    correctShots.textContent = objStats["FINALIZAÇÃO - NO GOL"] ? objStats["FINALIZAÇÃO - NO GOL"] : 0;
+                    incorrectShots.textContent = objStats["FINALIZAÇÃO - PRA FORA"] ? objStats["FINALIZAÇÃO - PRA FORA"] : 0;
+                    assists.textContent = objStats["PASSE - ASSISTENCIA"] ? objStats["PASSE - ASSISTENCIA"] : 0;
+                    correctPasses.textContent = objStats["PASSE - CERTO"] ? objStats["PASSE - CERTO"] : 0;
+                    incorrectPasses.textContent = objStats["PASSE - ERRADO"] ? objStats["PASSE - ERRADO"] : 0;
+                    correctDribbles.textContent = objStats["DRIBLE - CERTO"] ? objStats["DRIBLE - CERTO"] : 0;
+                    incorrectDribbles.textContent = objStats["DRIBLE - ERRADO"] ? objStats["DRIBLE - ERRADO"] : 0;
+                    tackles.textContent = objStats["DISPUTA - DESARME"] ? objStats["DISPUTA - DESARME"] : 0;
+                    interceptions.textContent = objStats["DISPUTA - INTERCEPTACAO"] ? objStats["DISPUTA - INTERCEPTACAO"] : 0;
+                    turnover.textContent = "0";
+                    foulsMade.textContent = objStats["DISPUTA - FALTA COMETIDA"] ? objStats["DISPUTA - FALTA COMETIDA"] : 0;
+                    foulsSuffered.textContent = objStats["DRIBLE - SOFREU FALTA"] ? objStats["DRIBLE - SOFREU FALTA"] : 0;
+                    yellowCard.textContent = "0";
+                    redCard.textContent = "0"
+                };
+
+                // Save  eventon local storage function
+                function saveEventToLocalStorage(event) {
+                    let events;
+                    if (localStorage.getItem('events') === null) {
+                        events = [];
+                    } else {
+                        events = JSON.parse(localStorage.getItem('events'));
+                    }
+                    events.push(event);
+                    localStorage.setItem('events', JSON.stringify(events));
+                }
+
+                // Remove event from local storage function
+                function removeEventFromLocalStorage(event) {
+                    let events;
+                    if (localStorage.getItem('events') === null) {
+                        events = [];
+                    } else {
+                        events = JSON.parse(localStorage.getItem('events'));
+                    }
+                    events.forEach((storedEvent, index) => {
+                        if (event === storedEvent) {
+                            events.splice(index, 1);
+                        }
+                    });
+                    localStorage.setItem('events', JSON.stringify(events));
+                }
+            });
+        </script>
 </body>
 
 </html>
