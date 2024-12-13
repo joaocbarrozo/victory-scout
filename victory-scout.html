@@ -254,49 +254,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <table id="stat-table" class="table table-responsive table-hover">
-                            <tbody>
-                                <tr>
-                                    <td>Gols</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Assistências</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Passes Certos / Errados</td>
-                                    <td><span>0</span> / <span>0</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Dribles Certos / Errados</td>
-                                    <td><span>0</span> / <span>0</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Desarmes</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Interceptações</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Bolas Perdidas</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Faltas Cometidas</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Faltas Sofridas</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>Cartões</td>
-                                    <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span>
-                                    </td>
-                                </tr>
+                        <table id="stats-table" class="table table-responsive table-hover">
+                            <tbody id="stats-table-body">
+
                             </tbody>
                         </table>
                     </div>
@@ -317,9 +277,49 @@
         <!-- Stats container-->
         <div id="stats-container" class="vw-95 m-1">
             <h3 id="stats-text" class="text-center bg-primary text-light m-1">Estatísticas</h3>
-            <table id="stats-table" class="table table-responsive table-hover">
-                <tbody id="stats-table-body">
-
+            <table id="stats-resume-table" class="table table-responsive table-hover">
+                <tbody>
+                    <tr>
+                        <td>Gols</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Assistências</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Passes Certos / Errados</td>
+                        <td><span>0</span> / <span>0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dribles Certos / Errados</td>
+                        <td><span>0</span> / <span>0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Desarmes</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Interceptações</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Bolas Perdidas</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Faltas Cometidas</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Faltas Sofridas</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Cartões</td>
+                        <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -328,20 +328,26 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        // Execute all functions after the DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            // Function Load events from local storage function
+            // Object store stats
+            let objStats = {};
+            
+            // Function Load events from local storage and add to events list
             function getEvents() {
+                // Load events
                 let events;
                 if (localStorage.getItem('events') === null) {
                     events = [];
                 } else {
                     events = JSON.parse(localStorage.getItem('events'));
                 }
+                // Create a <li> for each event
                 events.forEach((event) => {
                     let newLi = document.createElement("li");
                     newLi.classList.add('d-block', 'ml-3', 'list-group-item');
                     newLi.textContent = event;
-
+                    // create a delete button
                     const deleteBtn = document.createElement('i');
                     deleteBtn.classList.add('fas', 'fa-trash', 'delete-btn', 'm-2', 'text-danger');
                     deleteBtn.onclick = function () {
@@ -354,33 +360,12 @@
                     newLi.appendChild(deleteBtn);
                     eventList.appendChild(newLi);
                 });
-
             };
             // Variable events list
             const eventList = document.getElementById("events-list");
-
+            // call function to load events
             getEvents();
-
-            // Array with all li tags
-            const eventListItens = document.querySelectorAll('li');
-
-            // Object store stats
-            let objStats = {};
-
-            console.log(eventListItens)
-            // Add stats to objStats
-            eventListItens.forEach(item => {
-                const arrIemName = item.textContent.split('-');
-                let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
-                addStats(objStats, statsToAdd);
-                statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
-                addStats(objStats, statsToAdd);
-                statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
-                addStats(objStats, statsToAdd);
-            })
-
-
-            console.log(objStats);
+            updateStats();
 
             // Function to add properties to objStats
             function addStats(obj, prop) {
@@ -402,12 +387,6 @@
                 let newLi = document.createElement("li");
                 newLi.classList.add('d-block', 'ml-3', 'list-group-item');
                 newLi.textContent = `${passMinute}" - PASSE - ${passType} - ${passResult} - ${passLocation} - ${passSide} - ${passDetail}`;
-                /* // Add passes to objStats
-                 addStats(objStats, `PASSE - ${passType} - ${passResult}`);
-                 addStats(objStats, `PASSE - ${passResult} - ${passLocation} - ${passSide}`);
-                 addStats(objStats, `PASSE - ${passResult} - ${passDetail}`);
-                 // Save objStats on the local storage
-                 localStorage.setItem('objStats', JSON.stringify(objStats));*/
 
                 // Function to create a delete icon to remove events
                 const deleteBtn = document.createElement('i');
@@ -423,6 +402,7 @@
                 eventList.appendChild(newLi);
 
                 saveEventToLocalStorage(newLi.textContent);
+                updateStats()
             });
 
             // Create a dribble event
@@ -436,12 +416,6 @@
                 let newLi = document.createElement("li");
                 newLi.classList.add('d-block', 'ml-3', 'list-group-item');
                 newLi.textContent = `${dribbleMinute}" - DRIBLE - ${dribbleType} - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide} - ${dribbleDetail}`;
-                // Add dribbles to objStats
-                /* addStats(objStats, `DRIBLE - ${dribbleType} - ${dribbleResult}`);
-                 addStats(objStats, `DRIBLE - ${dribbleResult} - ${dribbleLocation} - ${dribbleSide}`);
-                 addStats(objStats, `DRIBLE - ${dribbleResult} - ${dribbleDetail}`);
-                 // Save objStats on the local storage
-                 localStorage.setItem('objStats', JSON.stringify(objStats));*/
 
                 // Function to create a delete icon to remove events
                 const deleteBtn = document.createElement('i');
@@ -461,6 +435,7 @@
                 eventList.appendChild(newLi);
 
                 saveEventToLocalStorage(newLi.textContent);
+                updateStats()
             });
 
             // Create shot event
@@ -474,12 +449,6 @@
                 let newLi = document.createElement("li");
                 newLi.classList.add('d-block', 'ml-3', 'list-group-item');
                 newLi.textContent = `${shotMinute}" - FINALIZAÇÃO - ${shotType} - ${shotResult} - ${shotLocation} - ${shotSide} - ${shotDetail}`;
-                /* // Add pass to objStats
-                 addStats(objStats, `FINALIZAÇÃO - ${shotType} - ${shotResult}`);
-                 addStats(objStats, `FINALIZAÇÃO - ${shotResult} - ${shotLocation} - ${shotSide}`);
-                 addStats(objStats, `FINALIZAÇÃO - ${shotResult} - ${shotDetail}`);
-                 // Save objStats on the local storage
-                 localStorage.setItem('objStats', JSON.stringify(objStats));*/
 
                 // Function to create a delete icon to remove events
                 const deleteBtn = document.createElement('i');
@@ -495,6 +464,7 @@
                 eventList.appendChild(newLi);
 
                 saveEventToLocalStorage(newLi.textContent);
+                updateStats()
             });
 
             // Create contest event
@@ -508,12 +478,6 @@
                 let newLi = document.createElement("li");
                 newLi.classList.add('d-block', 'ml-3', 'list-group-item');
                 newLi.textContent = `${contestMinute}" - DISPUTA - ${contestType} - ${contestResult} - ${contestLocation} - ${contestSide} - ${contestDetail}`;
-                /* // Add pass to objStats
-                 addStats(objStats, `DISPUTA - ${contestType} - ${contestResult}`);
-                 addStats(objStats, `DISPUTA - ${contestResult} - ${contestLocation} - ${contestSide}`);
-                 addStats(objStats, `DISPUTA - ${contestResult} - ${contestDetail}`);
-                 // Save objStats on the local storage
-                 localStorage.setItem('objStats', JSON.stringify(objStats));*/
 
                 // Function to create a delete icon to remove events
                 const deleteBtn = document.createElement('i');
@@ -529,23 +493,37 @@
                 eventList.appendChild(newLi);
 
                 saveEventToLocalStorage(newLi.textContent);
+                updateStats();
             });
 
+            // function to add stats to stats table
+            function updateStats() {
+                // Array with all li tags
+                const eventListItens = document.querySelectorAll('li');
+                // Add stats to objStats
+                eventListItens.forEach(item => {
+                    const arrIemName = item.textContent.split('-');
+                    let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
+                    addStats(objStats, statsToAdd);
+                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
+                    addStats(objStats, statsToAdd);
+                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
+                    addStats(objStats, statsToAdd);
+                });
+                const statsTableBody = document.getElementById("stats-table-body");
+                statsTableBody.innerHTML = "";
+                Object.keys(objStats).forEach(key => {
+                    const tr = document.createElement('tr');
+                    const tdKey = document.createElement('td');
+                    const tdValue = document.createElement('td');
+                    tdKey.textContent = key;
+                    tdValue.textContent = objStats[key];
+                    tr.appendChild(tdKey);
+                    tr.appendChild(tdValue);
+                    statsTableBody.appendChild(tr);
+                });
+            };
 
-
-            // Add stats to stats table
-            const statsTableBody = document.getElementById("stats-table-body");
-            statsTableBody.innerHTML = "";
-            Object.keys(objStats).forEach(key => {
-                const tr = document.createElement('tr');
-                const tdKey = document.createElement('td');
-                const tdValue = document.createElement('td');
-                tdKey.textContent = key;
-                tdValue.textContent = objStats[key];
-                tr.appendChild(tdKey);
-                tr.appendChild(tdValue);
-                statsTableBody.appendChild(tr);
-            });
 
             // Save  eventon local storage function
             function saveEventToLocalStorage(event) {
