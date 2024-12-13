@@ -15,6 +15,11 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+        .field-table {
+            height: 50%;
+            width: 60%;
+            margin-left: 20%;
+        }
     </style>
 </head>
 
@@ -349,38 +354,242 @@
             <h3 id="field-stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#field-stats-container">Setores do Campo</h3>
             <div id="field-stats-container"  class="collapse">
-                <div id="field">
+                <div id="field" style="color: aliceblue;">
                     <div class="row">
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 1</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Ataque Direita</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Finalizações</td>
+                                            <td id="correct-shots-atack-right">0</td>
+                                            <td id="incorrect-shots-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 2</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Meia Direita</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 3</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Defesa Direita</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 4</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Ataque Central</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Finalizações</td>
+                                            <td id="correct-shots-atack-right">0</td>
+                                            <td id="incorrect-shots-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 5</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Meia Central</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 6</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Defesa Central</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant text-center align-center">Quadrant 7</div>
+                            <div class="ratio ratio-4x3 field-quadrant align-center">
+                                <h5 class="text-center">Ataque Esquerda</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Finalizações</td>
+                                            <td id="correct-shots-atack-right">0</td>
+                                            <td id="incorrect-shots-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 8</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Meia Esquerda</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div class="col-4">
-                            <div class="ratio ratio-4x3 field-quadrant">Quadrant 9</div>
+                            <div class="ratio ratio-4x3 field-quadrant">
+                                <h5 class="text-center">Defesa Esquerda</h5>
+                                <table class="field-table mt-4 mx-">
+                                    <tbody>
+                                        <tr>
+                                            <td>Passes</td>
+                                            <td id="correct-passes-atack-right">0</td>
+                                            <td id="incorrect-passes-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dribles</td>
+                                            <td id="correct-dribbles-atack-right">0</td>
+                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Disputas</td>
+                                            <td id="winner-contests-atack-right">0</td>
+                                            <td id="losses-contests-atack-right">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
