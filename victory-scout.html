@@ -12,14 +12,14 @@
 
 <body>
     <!-- Body container -->
-    <div id="body-container" class="vw-95 justify-content-center m-2 ">
-        <div id="header-container" class="vw-100 m-1">
+    <div id="body-container" class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 m-2 mx-auto ">
+        <div id="header-container" class="m-1">
             <h1 id="header-text" class="bg-primary text-center text-light m-1">Nome do Jogador</h1>
             <h2 id="game-text" class="bg-secondary text-center text-light m-1"> Time X Adversário</h2>
             <h3 id="game-details-text" class="bg-secondary text-center text-light m-1">Local data e horário</h3>
         </div>
         <!-- Controls container-->
-        <div id="controls-container" class="d-flex justify-content-center vw-95 m-1">
+        <div id="controls-container" class="d-flex flex-wrap justify-content-center mx-auto">
             <button id="btn-pass" class="btn btn-primary m-1" data-bs-toggle="modal"
                 data-bs-target="#pass-modal">PASSE</button>
             <button id="btn-dribble" class="btn btn-primary m-1" data-bs-toggle="modal"
@@ -268,7 +268,7 @@
         </div>
 
         <!-- Events container-->
-        <div id="events-container" class="vw-95 m-1">
+        <div id="events-container" class="vw-95 m-1 mx-auto">
             <h3 id="events-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#events-list-container">Lances</h3>
             <div id="events-list-container" class="collapse">
@@ -279,10 +279,10 @@
 
         </div>
         <!-- Stats container-->
-        <div id="stats-container" class="vw-95 m-1">
+        <div id="stats-container" class="vw-95 m-1 mx-auto">
             <h3 id="stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#stats-resume-table-container">Estatísticas</h3>
-            <div id="stats-resume-table-container" class="collapse">
+            <div id="stats-resume-table-container" class="collapse show">
                 <table id="stats-resume-table" class="table table-responsive table-hover">
                     <tbody>
                         <tr>
