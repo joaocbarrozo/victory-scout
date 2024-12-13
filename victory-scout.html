@@ -269,59 +269,72 @@
 
         <!-- Events container-->
         <div id="events-container" class="vw-95 m-1">
-            <h3 id="events-text" class="text-center bg-primary text-light m-1">Lances</h3>
-            <ol id="events-list" class="list-group justify-content-center">
+            <h3 id="events-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
+                data-bs-target="#events-list-container">Lances</h3>
+            <div id="events-list-container" class="collapse">
+                <ol id="events-list" class="list-group justify-content-center">
 
-            </ol>
+                </ol>
+            </div>
+
         </div>
         <!-- Stats container-->
         <div id="stats-container" class="vw-95 m-1">
-            <h3 id="stats-text" class="text-center bg-primary text-light m-1">Estatísticas</h3>
-            <table id="stats-resume-table" class="table table-responsive table-hover">
-                <tbody>
-                    <tr>
-                        <td>Gols</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Assistências</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Passes Certos / Errados</td>
-                        <td><span>0</span> / <span>0</span></td>
-                    </tr>
-                    <tr>
-                        <td>Dribles Certos / Errados</td>
-                        <td><span>0</span> / <span>0</span></td>
-                    </tr>
-                    <tr>
-                        <td>Desarmes</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Interceptações</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Bolas Perdidas</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Faltas Cometidas</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Faltas Sofridas</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Cartões</td>
-                        <td><span class="badge bg-warning">0</span> / <span class="badge bg-danger">0</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3 id="stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
+                data-bs-target="#stats-resume-table-container">Estatísticas</h3>
+            <div id="stats-resume-table-container" class="collapse">
+                <table id="stats-resume-table" class="table table-responsive table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Gols</td>
+                            <td><span id="goals"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Finalizações No Gol / Pra Fora</td>
+                            <td><span id="correct-shots"></span> / <span id="incorrect-shots"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Assistências</td>
+                            <td><span id="assists"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Passes Certos / Errados</td>
+                            <td><span id="correct-passes"></span> / <span id="incorrect-passes"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Dribles Certos / Errados</td>
+                            <td><span id="correct-dribbles"></span> / <span id="incorrect-dribbles"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Desarmes</td>
+                            <td><span id="tackles"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Interceptações</td>
+                            <td><span id="interceptions"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Bolas Perdidas</td>
+                            <td><span id="turnover"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Faltas Cometidas</td>
+                            <td><span id="fouls-made"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Faltas Sofridas</td>
+                            <td><span id="fouls-suffered"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Cartões</td>
+                            <td><span id="yellow-card" class="badge bg-warning">0</span> / <span id="red-card"
+                                    class="badge bg-danger">0</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -332,7 +345,23 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Object store stats
             let objStats = {};
-            
+            // Resume stats variables
+            const goals = document.getElementById("goals");
+            const correctShots = document.getElementById("correct-shots");
+            const incorrectShots = document.getElementById("incorrect-shots");
+            const assists = document.getElementById("assists");
+            const correctPasses = document.getElementById("correct-passes");
+            const incorrectPasses = document.getElementById("incorrect-passes");
+            const correctDribbles = document.getElementById("correct-dribbles");
+            const incorrectDribbles = document.getElementById("incorrect-dribbles");
+            const tackles = document.getElementById("tackles");
+            const interceptions = document.getElementById("interceptions");
+            const turnover = document.getElementById("turnover");
+            const foulsMade = document.getElementById("fouls-made");
+            const foulsSuffered = document.getElementById("fouls-suffered");
+            const yellowCard = document.getElementById("yellow-card");
+            const redCard = document.getElementById("red-card");
+
             // Function Load events from local storage and add to events list
             function getEvents() {
                 // Load events
@@ -358,7 +387,11 @@
                         }
                     };
                     newLi.appendChild(deleteBtn);
-                    eventList.appendChild(newLi);
+                    if (eventList.firstChild) {
+                        eventList.insertBefore(newLi, eventList.firstChild)
+                    } else {
+                        eventList.appendChild(newLi);
+                    }
                 });
             };
             // Variable events list
@@ -399,7 +432,11 @@
                     }
                 };
                 newLi.appendChild(deleteBtn);
-                eventList.appendChild(newLi);
+                if (eventList.firstChild) {
+                    eventList.insertBefore(newLi, eventList.firstChild)
+                } else {
+                    eventList.appendChild(newLi);
+                }
 
                 saveEventToLocalStorage(newLi.textContent);
                 updateStats()
@@ -432,7 +469,11 @@
                     }
                 };
                 newLi.appendChild(deleteBtn);
-                eventList.appendChild(newLi);
+                if (eventList.firstChild) {
+                    eventList.insertBefore(newLi, eventList.firstChild)
+                } else {
+                    eventList.appendChild(newLi);
+                }
 
                 saveEventToLocalStorage(newLi.textContent);
                 updateStats()
@@ -461,7 +502,11 @@
                     }
                 };
                 newLi.appendChild(deleteBtn);
-                eventList.appendChild(newLi);
+                if (eventList.firstChild) {
+                    eventList.insertBefore(newLi, eventList.firstChild)
+                } else {
+                    eventList.appendChild(newLi);
+                }
 
                 saveEventToLocalStorage(newLi.textContent);
                 updateStats()
@@ -490,7 +535,11 @@
                     }
                 };
                 newLi.appendChild(deleteBtn);
-                eventList.appendChild(newLi);
+                if (eventList.firstChild) {
+                    eventList.insertBefore(newLi, eventList.firstChild)
+                } else {
+                    eventList.appendChild(newLi);
+                }
 
                 saveEventToLocalStorage(newLi.textContent);
                 updateStats();
@@ -500,16 +549,27 @@
             function updateStats() {
                 // Array with all li tags
                 const eventListItens = document.querySelectorAll('li');
+                objStats = {};
                 // Add stats to objStats
                 eventListItens.forEach(item => {
                     const arrIemName = item.textContent.split('-');
-                    let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
+                    // EVENT - RESULT - LOCATION - SIDE 
+                    let statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
                     addStats(objStats, statsToAdd);
-                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[4].trim()} - ${arrIemName[5].trim()}`;
+                    // EVENT - TYPE - RESULT
+                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[2].trim()} - ${arrIemName[3].trim()}`;
                     addStats(objStats, statsToAdd);
+                    // EVENT - RESULT - DETAIL
                     statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
                     addStats(objStats, statsToAdd);
+                    // EVENT - RESULT
+                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()}`;
+                    addStats(objStats, statsToAdd);
+                    // EVENT - DETAIL
+                    statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[6].trim()}`;
+                    addStats(objStats, statsToAdd);
                 });
+                // Add rows to table stats
                 const statsTableBody = document.getElementById("stats-table-body");
                 statsTableBody.innerHTML = "";
                 Object.keys(objStats).forEach(key => {
@@ -522,8 +582,23 @@
                     tr.appendChild(tdValue);
                     statsTableBody.appendChild(tr);
                 });
+                // Add stats to resume stats table
+                goals.textContent = objStats["FINALIZAÇÃO - GOL"] ? objStats["FINALIZAÇÃO - GOL"] : 0;
+                correctShots.textContent = objStats["FINALIZAÇÃO - NO GOL"] ? objStats["FINALIZAÇÃO - NO GOL"] : 0;
+                incorrectShots.textContent = objStats["FINALIZAÇÃO - PRA FORA"] ? objStats["FINALIZAÇÃO - PRA FORA"] : 0;
+                assists.textContent = objStats["PASSE - ASSISTENCIA"] ? objStats["PASSE - ASSISTENCIA"] : 0;
+                correctPasses.textContent = objStats["PASSE - CERTO"] ? objStats["PASSE - CERTO"] : 0;
+                incorrectPasses.textContent = objStats["PASSE - ERRADO"] ? objStats["PASSE - ERRADO"] : 0;
+                correctDribbles.textContent = objStats["DRIBLE - CERTO"] ? objStats["DRIBLE - CERTO"] : 0;
+                incorrectDribbles.textContent = objStats["DRIBLE - ERRADO"] ? objStats["DRIBLE - ERRADO"] : 0;
+                tackles.textContent = objStats["DISPUTA - DESARME"] ? objStats["DISPUTA - DESARME"] : 0;
+                interceptions.textContent = objStats["DISPUTA - INTERCEPTACAO"] ? objStats["DISPUTA - INTERCEPTACAO"] : 0;
+                turnover.textContent = "0";
+                foulsMade.textContent = objStats["DISPUTA - FALTA COMETIDA"] ? objStats["DISPUTA - FALTA COMETIDA"] : 0;
+                foulsSuffered.textContent = objStats["DRIBLE - FALTA SOFRIDA"] ? objStats["DRIBLE - FALTA SOFRIDA"] : 0;
+                yellowCard.textContent = "0";
+                redCard.textContent = "0"
             };
-
 
             // Save  eventon local storage function
             function saveEventToLocalStorage(event) {
