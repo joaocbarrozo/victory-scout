@@ -461,7 +461,7 @@
                                         <tr>
                                             <td>Disputas</td>
                                             <td id="winner-contests-defense-right">0</td>
-                                            <td id="losses-contestsdefensek-right">0</td>
+                                            <td id="losses-contests-defense-right">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -657,30 +657,30 @@
 
                 // Field sectors ststs
                 // Atack Right
-                const correctShotsAtackright = document.getElementById("correct-shots-atack-right");
-                const incorrectShotsAtackright = document.getElementById("incorrect-shots-atack-right");
-                const correctPassesAtackright = document.getElementById("correct-passes-atack-right");
-                const incorrectPassesAtackright = document.getElementById("incorrect-passes-atack-right");
-                const correctDribblesAtackright = document.getElementById("correct-dribbles-atack-right");
-                const incorrectDribblesAtackright = document.getElementById("incorrect-dribbles-atack-right");
-                const winnerContestsAtackright = document.getElementById("winner-contests-atack-right");
-                const lossesContestsAtackright = document.getElementById("losses-contests-atack-right");
+                const correctShotsAtackRight = document.getElementById("correct-shots-atack-right");
+                const incorrectShotsAtackRight = document.getElementById("incorrect-shots-atack-right");
+                const correctPassesAtackRight = document.getElementById("correct-passes-atack-right");
+                const incorrectPassesAtackRight = document.getElementById("incorrect-passes-atack-right");
+                const correctDribblesAtackRight = document.getElementById("correct-dribbles-atack-right");
+                const incorrectDribblesAtackRight = document.getElementById("incorrect-dribbles-atack-right");
+                const winnerContestsAtackRight = document.getElementById("winner-contests-atack-right");
+                const lossesContestsAtackRight = document.getElementById("losses-contests-atack-right");
 
                 // Mid Right
-                const correctPassesMidright = document.getElementById("correct-passes-mid-right");
-                const incorrectPassesMidright = document.getElementById("incorrect-passes-mid-right");
-                const correctDribblesMidright = document.getElementById("correct-dribbles-mid-right");
-                const incorrectDribblesMidright = document.getElementById("incorrect-dribbles-mid-right");
-                const winnerContestsMidright = document.getElementById("winner-contests-mid-right");
-                const lossesContestsMidright = document.getElementById("losses-contests-mid-right");
+                const correctPassesMidRight = document.getElementById("correct-passes-mid-right");
+                const incorrectPassesMidRight = document.getElementById("incorrect-passes-mid-right");
+                const correctDribblesMidRight = document.getElementById("correct-dribbles-mid-right");
+                const incorrectDribblesMidRight = document.getElementById("incorrect-dribbles-mid-right");
+                const winnerContestsMidRight = document.getElementById("winner-contests-mid-right");
+                const lossesContestsMidRight = document.getElementById("losses-contests-mid-right");
 
                 // Defense Right
-                const correctPassesDefenseright = document.getElementById("correct-passes-defense-left");
-                const incorrectPassesDefenseright = document.getElementById("incorrect-passes-defense-right");
-                const correctDribblesDefenseright = document.getElementById("correct-dribbles-defense-right");
-                const incorrectDribblesDefenseright = document.getElementById("incorrect-dribbles-defense-right");
-                const winnerContestsDefenseright = document.getElementById("winner-contests-defense-right");
-                const lossesContestsDefenseright = document.getElementById("losses-contests-defense-right");
+                const correctPassesDefenseRight = document.getElementById("correct-passes-defense-right");
+                const incorrectPassesDefenseRight = document.getElementById("incorrect-passes-defense-right");
+                const correctDribblesDefenseRight = document.getElementById("correct-dribbles-defense-right");
+                const incorrectDribblesDefenseRight = document.getElementById("incorrect-dribbles-defense-right");
+                const winnerContestsDefenseRight = document.getElementById("winner-contests-defense-right");
+                const lossesContestsDefenseRight = document.getElementById("losses-contests-defense-right");
 
                 // Atack Center
                 const correctShotsAtackCenter = document.getElementById("correct-shots-atack-center");
@@ -935,6 +935,9 @@
                         // EVENT - RESULT - DETAIL
                         statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[6].trim()}`;
                         addStats(objStats, statsToAdd);
+                        // EVENT - RESULT - SIDE 
+                        statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()} - ${arrIemName[5].trim()}`;
+                        addStats(objStats, statsToAdd);
                         // EVENT - RESULT
                         statsToAdd = `${arrIemName[1].trim()} - ${arrIemName[3].trim()}`;
                         addStats(objStats, statsToAdd);
@@ -974,80 +977,80 @@
 
                     // Add stats to fields sectors
                     // Atack Right
-                    correctShotsAtackright.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] : 0;
-                    incorrectShotsAtackright.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] : 0;;
-                    correctPassesAtackright.textContent = objStats["PASSE - CERTO - ATAQUE - DIREITA"] ? objStats["PASSE - CERTO - ATAQUE - DIREITA"] : 0;
-                    incorrectPassesAtackright.textContent = objStats["PASSE - ERRADO - ATAQUE - DIREITA"] ? objStats["PASSE - ERRADO - ATAQUE - DIREITA"] : 0;
-                    correctDribblesAtackright.textContent = objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] ? objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] : 0;
-                    incorrectDribblesAtackright.textContent = objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] ? objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] : 0;
-                    winnerContestsAtackright.textContent = objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] ? objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] : 0;
-                    lossesContestsAtackright.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] ? objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] : 0;
+                    correctShotsAtackRight.textContent = objStats["FINALIZAÇÃO - NO GOL - DIREITA"] ? objStats["FINALIZAÇÃO - NO GOL - DIREITA"] : 0;
+                    incorrectShotsAtackRight.textContent = objStats["FINALIZAÇÃO - PRA FORA - DIREITA"] ? objStats["FINALIZAÇÃO - PRA FORA - DIREITA"] : 0;
+                    correctPassesAtackRight.textContent = objStats["PASSE - CERTO - ATAQUE - DIREITA"] ? objStats["PASSE - CERTO - ATAQUE - DIREITA"] : 0;
+                    incorrectPassesAtackRight.textContent = objStats["PASSE - ERRADO - ATAQUE - DIREITA"] ? objStats["PASSE - ERRADO - ATAQUE - DIREITA"] : 0;
+                    correctDribblesAtackRight.textContent = objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] ? objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] : 0;
+                    incorrectDribblesAtackRight.textContent = objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] ? objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] : 0;
+                    winnerContestsAtackRight.textContent = objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] ? objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] : 0;
+                    lossesContestsAtackRight.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] ? objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] : 0;
 
                     // Mid Right
-                    correctPassesMidright.textContent = objStats["PASSE - CERTO - MEIO - DIREITA"] ? objStats["PASSE - CERTO - MEIO - DIREITA"] : 0;
-                    incorrectPassesMidright.textContent = objStats["PASSE - ERRADO - MEIO - DIREITA"] ? objStats["PASSE - ERRADO - MEIO - DIREITA"] : 0;
-                    correctDribblesMidright.textContent = objStats["PASSE - CERTO - MEIO - DIREITA"] ? objStats["PASSE - CERTO - MEIO - DIREITA"] : 0;
-                    incorrectDribblesMidright.textContent = objStats["PASSE - ERRADO - MEIO - DIREITA"] ? objStats["PASSE - ERRADO - MEIO - DIREITA"] : 0;
-                    winnerContestsMidright.textContent = objStats["DISPUTA - GANHA - MEIO - DIREITA"] ? objStats["DISPUTA - GANHA - MEIO - DIREITA"] : 0;
-                    lossesContestsMidright.textContent = objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] ? objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] : 0;
+                    correctPassesMidRight.textContent = objStats["PASSE - CERTO - MEIO - DIREITA"] ? objStats["PASSE - CERTO - MEIO - DIREITA"] : 0;
+                    incorrectPassesMidRight.textContent = objStats["PASSE - ERRADO - MEIO - DIREITA"] ? objStats["PASSE - ERRADO - MEIO - DIREITA"] : 0;
+                    correctDribblesMidRight.textContent = objStats["DRIBLE - CERTO - MEIO - DIREITA"] ? objStats["DRIBLE - CERTO - MEIO - DIREITA"] : 0;
+                    incorrectDribblesMidRight.textContent = objStats["DRIBLE - ERRADO - MEIO - DIREITA"] ? objStats["DRIBLE - ERRADO - MEIO - DIREITA"] : 0;
+                    winnerContestsMidRight.textContent = objStats["DISPUTA - GANHA - MEIO - DIREITA"] ? objStats["DISPUTA - GANHA - MEIO - DIREITA"] : 0;
+                    lossesContestsMidRight.textContent = objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] ? objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] : 0;
 
                     // Defense Right
-                    correctPassesDefenseright.textContent = objStats["PASSE - CERTO - DEFESA - DIREITA"] ? objStats["PASSE - CERTO - DEFESA - DIREITA"] : 0;
-                    incorrectPassesDefenseright.textContent = objStats["PASSE - ERRADO - DEFESA - DIREITA"] ? objStats["PASSE - ERRADO - DEFESA - DIREITA"] : 0;
-                    correctDribblesDefenseright.textContent = objStats["DRIBLE - CERTO - DEFESA - DIREITA"] ? objStats["DRIBLE - CERTO - DEFESA - DIREITA"] : 0;
-                    incorrectDribblesDefenseright.textContent = objStats["PASSES - ERRADO - DEFESA - DIREITA"] ? objStats["PASSES - ERRADO - DEFESA - DIREITA"] : 0;
-                    winnerContestsDefenseright.textContent = objStats["DISPUTA - GANHA - DEFESA - DIREITA"] ? objStats["DISPUTA - GANHA - DEFESA - DIREITA"] : 0;
-                    lossesContestsDefenseright.textContent = objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] ? objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] : 0;
+                    correctPassesDefenseRight.textContent = objStats["PASSE - CERTO - DEFESA - DIREITA"] ? objStats["PASSE - CERTO - DEFESA - DIREITA"] : 0;
+                    incorrectPassesDefenseRight.textContent = objStats["PASSE - ERRADO - DEFESA - DIREITA"] ? objStats["PASSE - ERRADO - DEFESA - DIREITA"] : 0;
+                    correctDribblesDefenseRight.textContent = objStats["DRIBLE - CERTO - DEFESA - DIREITA"] ? objStats["DRIBLE - CERTO - DEFESA - DIREITA"] : 0;
+                    incorrectDribblesDefenseRight.textContent = objStats["DRIBLE - ERRADO - DEFESA - DIREITA"] ? objStats["DRIBLE - ERRADO - DEFESA - DIREITA"] : 0;
+                    winnerContestsDefenseRight.textContent = objStats["DISPUTA - GANHA - DEFESA - DIREITA"] ? objStats["DISPUTA - GANHA - DEFESA - DIREITA"] : 0;
+                    lossesContestsDefenseRight.textContent = objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] ? objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] : 0;
 
                     // Atack Center
-                    correctShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] : 0;;
-                    incorrectShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] : 0;;
+                    correctShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - NO GOL - CENTRO"] ? objStats["FINALIZAÇÃO - NO GOL - CENTRO"] : 0;
+                    incorrectShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - PRA FORA - CENTRO"] ? objStats["FINALIZAÇÃO - PRA FORA - CENTRO"] : 0;
                     correctPassesAtackCenter.textContent = objStats["PASSE - CERTO - ATAQUE - CENTRO"] ? objStats["PASSE - CERTO - ATAQUE - CENTRO"] : 0;
                     incorrectPassesAtackCenter.textContent = objStats["PASSE - ERRADO - ATAQUE - CENTRO"] ? objStats["PASSE - ERRADO - ATAQUE - CENTRO"] : 0;
-                    correctDribblesAtackCenter.textContent = objStats["PASSES - CERTO - ATAQUE - CENTRO"] ? objStats["PASSES - CERTO - ATAQUE - CENTRO"] : 0;
-                    incorrectDribblesAtackCenter.textContent = objStats["PASSES - ERRADO - ATAQUE - CENTRO"] ? objStats["PASSES - ERRADO - ATAQUE - CENTRO"] : 0;
+                    correctDribblesAtackCenter.textContent = objStats["DRIBLE - CERTO - ATAQUE - CENTRO"] ? objStats["DRIBLE - CERTO - ATAQUE - CENTRO"] : 0;
+                    incorrectDribblesAtackCenter.textContent = objStats["DRIBLE - ERRADO - ATAQUE - CENTRO"] ? objStats["DRIBLE - ERRADO - ATAQUE - CENTRO"] : 0;
                     winnerContestsAtackCenter.textContent = objStats["DISPUTA - GANHA - ATAQUE - CENTRO"] ? objStats["DISPUTA - GANHA - ATAQUE - CENTRO"] : 0;
                     lossesContestsAtackCenter.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - CENTRO"] ? objStats["DISPUTA - PERDIDA - ATAQUE - CENTRO"] : 0;
 
                     // Mid Center
                     correctPassesMidCenter.textContent = objStats["PASSE - CERTO - MEIO - CENTRO"] ? objStats["PASSE - CERTO - MEIO - CENTRO"] : 0;
                     incorrectPassesMidCenter.textContent = objStats["PASSE - ERRADO - MEIO - CENTRO"] ? objStats["PASSE - ERRADO - MEIO - CENTRO"] : 0;
-                    correctDribblesMidCenter.textContent = objStats["PASSES - CERTO - MEIO - CENTRO"] ? objStats["PASSES - CERTO - MEIO - CENTRO"] : 0;
-                    incorrectDribblesMidCenter.textContent = objStats["PASSES - ERRADO - MEIO - CENTRO"] ? objStats["PASSES - ERRADO - MEIO - CENTRO"] : 0;
+                    correctDribblesMidCenter.textContent = objStats["DRIBLE - CERTO - MEIO - CENTRO"] ? objStats["DRIBLE - CERTO - MEIO - CENTRO"] : 0;
+                    incorrectDribblesMidCenter.textContent = objStats["DRIBLE - ERRADO - MEIO - CENTRO"] ? objStats["DRIBLE - ERRADO - MEIO - CENTRO"] : 0;
                     winnerContestsMidCenter.textContent = objStats["DISPUTA - GANHA - MEIO - CENTRO"] ? objStats["DISPUTA - GANHA - MEIO - CENTRO"] : 0;
                     lossesContestsMidCenter.textContent = objStats["DISPUTA - PERDIDA - MEIO - CENTRO"] ? objStats["DISPUTA - PERDIDA - MEIO - CENTRO"] : 0;
 
                     // Defense Center
                     correctPassesDefenseCenter.textContent = objStats["PASSE - CERTO - DEFESA - CENTRO"] ? objStats["PASSE - CERTO - DEFESA - CENTRO"] : 0;
                     incorrectPassesDefenseCenter.textContent = objStats["PASSE - ERRADO - DEFESA - CENTRO"] ? objStats["PASSE - ERRADO - DEFESA - CENTRO"] : 0;
-                    correctDribblesDefenseCenter.textContent = objStats["PASSES - CERTO - DEFESA - CENTRO"] ? objStats["PASSES - CERTO - DEFESA - CENTRO"] : 0;
-                    incorrectDribblesDefenseCenter.textContent = objStats["PASSES - ERRADO - DEFESA - CENTRO"] ? objStats["PASSES - ERRADO - DEFESA - CENTRO"] : 0;
+                    correctDribblesDefenseCenter.textContent = objStats["DRIBLE - CERTO - DEFESA - CENTRO"] ? objStats["DRIBLE - CERTO - DEFESA - CENTRO"] : 0;
+                    incorrectDribblesDefenseCenter.textContent = objStats["DRIBLE - ERRADO - DEFESA - CENTRO"] ? objStats["DRIBLE - ERRADO - DEFESA - CENTRO"] : 0;
                     winnerContestsDefenseCenter.textContent = objStats["DISPUTA - GANHA - DEFESA - CENTRO"] ? objStats["DISPUTA - GANHA - DEFESA - CENTRO"] : 0;
                     lossesContestsDefenseCenter.textContent = objStats["DISPUTA - PERDIDA - DEFESA - CENTRO"] ? objStats["DISPUTA - PERDIDA - DEFESA - CENTRO"] : 0;
 
                     // Atack Left
-                    correctShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] : 0;;
-                    incorrectShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] : 0;;
+                    correctShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - NO GOL - ESQUERDA"] ? objStats["FINALIZAÇÃO - NO GOL - ESQUERDA"] : 0;
+                    incorrectShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - PRA FORA - ESQUERDA"] ? objStats["FINALIZAÇÃO - PRA FORA - ESQUERDA"] : 0;
                     correctPassesAtackLeft.textContent = objStats["PASSE - CERTO - ATAQUE - ESQUERDA"] ? objStats["PASSE - CERTO - ATAQUE - ESQUERDA"] : 0;
                     incorrectPassesAtackLeft.textContent = objStats["PASSE - ERRADO - ATAQUE - ESQUERDA"] ? objStats["PASSE - ERRADO - ATAQUE - ESQUERDA"] : 0;
-                    correctDribblesAtackLeft.textContent = objStats["PASSES - CERTO - ATAQUE - DIREITA"] ? objStats["PASSES - CERTO - ATAQUE - ESQUERDA"] : 0;
-                    incorrectDribblesAtackLeft.textContent = objStats["PASSES - ERRADO - ATAQUE - ESQUERDA"] ? objStats["PASSES - ERRADO - ATAQUE - ESQUERDA"] : 0;
+                    correctDribblesAtackLeft.textContent = objStats["DRIBLE - CERTO - ATAQUE - ESQUERDA"] ? objStats["DRIBLE - CERTO - ATAQUE - ESQUERDA"] : 0;
+                    incorrectDribblesAtackLeft.textContent = objStats["DRIBLE - ERRADO - ATAQUE - ESQUERDA"] ? objStats["DRIBLE - ERRADO - ATAQUE - ESQUERDA"] : 0;
                     winnerContestsAtackLeft.textContent = objStats["DISPUTA - GANHA - ATAQUE - ESQUERDA"] ? objStats["DISPUTA - GANHA - ATAQUE - ESQUERDA"] : 0;
                     lossesContestsAtackLeft.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - ATAQUE - ESQUERDA"] : 0;
 
                     // Mid Left
                     correctPassesMidLeft.textContent = objStats["PASSE - CERTO - MEIO - ESQUERDA"] ? objStats["PASSE - CERTO - MEIO - ESQUERDA"] : 0;
                     incorrectPassesMidLeft.textContent = objStats["PASSE - ERRADO - MEIO - ESQUERDA"] ? objStats["PASSE - ERRADO - MEIO - ESQUERDA"] : 0;
-                    correctDribblesMidLeft.textContent = objStats["PASSES - CERTO - MEIO - ESQUERDA"] ? objStats["PASSES - CERTO - MEIO - ESQUERDA"] : 0;
-                    incorrectDribblesMidLeft.textContent = objStats["PASSES - ERRADO - MEIO - ESQUERDA"] ? objStats["PASSES - ERRADO - MEIO -ESQUERDAA"] : 0;
+                    correctDribblesMidLeft.textContent = objStats["DRIBLE - CERTO - MEIO - ESQUERDA"] ? objStats["DRIBLE - CERTO - MEIO - ESQUERDA"] : 0;
+                    incorrectDribblesMidLeft.textContent = objStats["DRIBLE - ERRADO - MEIO - ESQUERDA"] ? objStats["DRIBLE - ERRADO - MEIO -ESQUERDAA"] : 0;
                     winnerContestsMidLeft.textContent = objStats["DISPUTA - GANHA - MEIO - ESQUERDA"] ? objStats["DISPUTA - GANHA - MEIO - ESQUERDA"] : 0;
                     lossesContestsMidLeft.textContent = objStats["DISPUTA - PERDIDA - MEIO - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - MEIO - ESQUERDA"] : 0;
 
                     // Defense Left
                     correctPassesDefenseLeft.textContent = objStats["PASSE - CERTO - DEFESA - ESQUERDA"] ? objStats["PASSE - CERTO - DEFESA - ESQUERDA"] : 0;
                     incorrectPassesDefenseLeft.textContent = objStats["PASSE - ERRADO - DEFESA - ESQUERDA"] ? objStats["PASSE - ERRADO - DEFESA -ESQUERDA"] : 0;
-                    correctDribblesDefenseLeft.textContent = objStats["PASSES - CERTO - DEFESA - ESQUERDA"] ? objStats["PASSES - CERTO - DEFESA - ESQUERDA"] : 0;
-                    incorrectDribblesDefenseLeft.textContent = objStats["PASSES - ERRADO - DEFESA - ESQUERDA"] ? objStats["PASSES - ERRADO - DEFESA - ESQUERDA"] : 0;
+                    correctDribblesDefenseLeft.textContent = objStats["DRIBLE - CERTO - DEFESA - ESQUERDA"] ? objStats["DRIBLE - CERTO - DEFESA - ESQUERDA"] : 0;
+                    incorrectDribblesDefenseLeft.textContent = objStats["DRIBLE - ERRADO - DEFESA - ESQUERDA"] ? objStats["DRIBLE - ERRADO - DEFESA - ESQUERDA"] : 0;
                     winnerContestsDefenseLeft.textContent = objStats["DISPUTA - GANHA - DEFESA - ESQUERDA"] ? objStats["DISPUTA - GANHA - DEFESA - ESQUERDA"] : 0;
                     lossesContestsDefenseLeft.textContent = objStats["DISPUTA - PERDIDA - DEFESA - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - DEFESA - ESQUERDA"] : 0;
                 };
