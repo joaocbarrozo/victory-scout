@@ -15,6 +15,7 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .field-table {
             height: 50%;
             width: 60%;
@@ -286,7 +287,40 @@
                 data-bs-target="#events-list-container">Lances</h3>
             <div id="events-list-container" class="collapse">
                 <ol id="events-list" class="list-group justify-content-center">
-
+                    <li class="d-block ml-3 list-group-item">79" - PASSE - LONGO - CERTO - MEIO - DIREITA -
+                        ASSISTENCIA<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">69" - PASSE - CRUZAMENTO - ERRADO - ATAQUE - DIREITA - PRA
+                        FRENTE<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">56" - DISPUTA - AEREA - PERDIDA - MEIO - CENTRO - FALTA
+                        COMETIDA<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">49" - DRIBLE - LEM VELOCIDADE - CERTO - ATAQUE - DIREITA -
+                        SOFREU FALTA<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">45" - FINALIZAÇÃO - CHUTE - NO GOL - FORA DA AREA - DIREITA
+                        - SEM PERIGO<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">44" - DISPUTA - NO CHAO - GANHA - MEIO - CENTRO -
+                        INTERCEPTACAO<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">39" - DRIBLE - LEM VELOCIDADE - ERRADO - MEIO - DIREITA -
+                        DE LADO<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">29" - DISPUTA - NO CHAO - GANHA - MEIO - CENTRO - DESARME<i
+                            class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">25" - FINALIZAÇÃO - CHUTE - NO GOL - GRANDE AREA - DIREITA
+                        - GOL<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">19" - PASSE - LONGO - CERTO - DEFESA - DIREITA - PRA
+                        FRENTE<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">12" - DISPUTA - AEREA - PERDIDA - MEIO - DIREITA -
+                        DIVIDIDA<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">10" - FINALIZAÇÃO - CHUTE - PRA FORA - FORA DA AREA -
+                        CENTRO - PERIGOSA<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">9" - PASSE - CURTO - CERTO - ATAQUE - DIREITA - PRA TRÀS<i
+                            class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">8" - DRIBLE - LEM VELOCIDADE - CERTO - MEIO - DIREITA - PRA
+                        FRENTE<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">8" - DRIBLE - CURTO - CERTO - MEIO - DIREITA - DE LADO<i
+                            class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">5" - PASSE - CURTO - CERTO - DEFESA - DIREITA - PRA
+                        FRENTE<i class="fas fa-trash delete-btn m-2 text-danger"></i></li>
+                    <li class="d-block ml-3 list-group-item">4" - PASSE - CURTO - CERTO - DEFESA - DIREITA - DE LADO<i
+                            class="fas fa-trash delete-btn m-2 text-danger"></i></li>
                 </ol>
             </div>
 
@@ -353,7 +387,7 @@
         <div id="field -stats-container" class="vw-95 m-1 mx-auto">
             <h3 id="field-stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#field-stats-container">Setores do Campo</h3>
-            <div id="field-stats-container"  class="collapse">
+            <div id="field-stats-container" class="collapse">
                 <div id="field" style="color: aliceblue;">
                     <div class="row">
                         <div class="col-4">
@@ -392,18 +426,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-mid-right">0</td>
+                                            <td id="incorrect-passes-mid-right">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-mid-right">0</td>
+                                            <td id="incorrect-dribbles-mid-right">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-mid-right">0</td>
+                                            <td id="losses-contests-mid-right">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -416,18 +450,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-defense-right">0</td>
+                                            <td id="incorrect-passes-defense-right">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-defense-right">0</td>
+                                            <td id="incorrect-dribbles-defense-right">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-defense-right">0</td>
+                                            <td id="losses-contestsdefensek-right">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -442,23 +476,23 @@
                                     <tbody>
                                         <tr>
                                             <td>Finalizações</td>
-                                            <td id="correct-shots-atack-right">0</td>
-                                            <td id="incorrect-shots-atack-right">0</td>
+                                            <td id="correct-shots-atack-center">0</td>
+                                            <td id="incorrect-shots-atack-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-atack-center">0</td>
+                                            <td id="incorrect-passes-atack-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-atack-center">0</td>
+                                            <td id="incorrect-dribbles-atack-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-atack-center">0</td>
+                                            <td id="losses-contests-atack-center">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -471,18 +505,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-mid-center">0</td>
+                                            <td id="incorrect-passes-mid-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-mid-center">0</td>
+                                            <td id="incorrect-dribbles-mid-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-mid-center">0</td>
+                                            <td id="losses-contests-mid-center">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -495,18 +529,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-defense-center">0</td>
+                                            <td id="incorrect-passes-defense-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-defense-center">0</td>
+                                            <td id="incorrect-dribbles-defense-center">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-defense-center">0</td>
+                                            <td id="losses-contests-defense-center">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -521,23 +555,23 @@
                                     <tbody>
                                         <tr>
                                             <td>Finalizações</td>
-                                            <td id="correct-shots-atack-right">0</td>
-                                            <td id="incorrect-shots-atack-right">0</td>
+                                            <td id="correct-shots-atack-left">0</td>
+                                            <td id="incorrect-shots-atack-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-atack-left">0</td>
+                                            <td id="incorrect-passes-atack-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-atack-left">0</td>
+                                            <td id="incorrect-dribbles-atack-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-atack-left">0</td>
+                                            <td id="losses-contests-atack-left">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -550,18 +584,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-mid-left">0</td>
+                                            <td id="incorrect-passes-mid-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-mid-left">0</td>
+                                            <td id="incorrect-dribbles-mid-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-mid-left">0</td>
+                                            <td id="losses-contests-mid-left">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -574,18 +608,18 @@
                                     <tbody>
                                         <tr>
                                             <td>Passes</td>
-                                            <td id="correct-passes-atack-right">0</td>
-                                            <td id="incorrect-passes-atack-right">0</td>
+                                            <td id="correct-passes-defense-left">0</td>
+                                            <td id="incorrect-passes-defense-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Dribles</td>
-                                            <td id="correct-dribbles-atack-right">0</td>
-                                            <td id="incorrect-dribbles-atack-right">0</td>
+                                            <td id="correct-dribbles-defense-left">0</td>
+                                            <td id="incorrect-dribbles-defense-left">0</td>
                                         </tr>
                                         <tr>
                                             <td>Disputas</td>
-                                            <td id="winner-contests-atack-right">0</td>
-                                            <td id="losses-contests-atack-right">0</td>
+                                            <td id="winner-contests-defense-left">0</td>
+                                            <td id="losses-contests-defense-left">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -620,6 +654,85 @@
                 const foulsSuffered = document.getElementById("fouls-suffered");
                 const yellowCard = document.getElementById("yellow-card");
                 const redCard = document.getElementById("red-card");
+
+                // Field sectors ststs
+                // Atack Right
+                const correctShotsAtackright = document.getElementById("correct-shots-atack-right");
+                const incorrectShotsAtackright = document.getElementById("incorrect-shots-atack-right");
+                const correctPassesAtackright = document.getElementById("correct-passes-atack-right");
+                const incorrectPassesAtackright = document.getElementById("incorrect-passes-atack-right");
+                const correctDribblesAtackright = document.getElementById("correct-dribbles-atack-right");
+                const incorrectDribblesAtackright = document.getElementById("incorrect-dribbles-atack-right");
+                const winnerContestsAtackright = document.getElementById("winner-contests-atack-right");
+                const lossesContestsAtackright = document.getElementById("losses-contests-atack-right");
+
+                // Mid Right
+                const correctPassesMidright = document.getElementById("correct-passes-mid-right");
+                const incorrectPassesMidright = document.getElementById("incorrect-passes-mid-right");
+                const correctDribblesMidright = document.getElementById("correct-dribbles-mid-right");
+                const incorrectDribblesMidright = document.getElementById("incorrect-dribbles-mid-right");
+                const winnerContestsMidright = document.getElementById("winner-contests-mid-right");
+                const lossesContestsMidright = document.getElementById("losses-contests-mid-right");
+
+                // Defense Right
+                const correctPassesDefenseright = document.getElementById("correct-passes-defense-left");
+                const incorrectPassesDefenseright = document.getElementById("incorrect-passes-defense-right");
+                const correctDribblesDefenseright = document.getElementById("correct-dribbles-defense-right");
+                const incorrectDribblesDefenseright = document.getElementById("incorrect-dribbles-defense-right");
+                const winnerContestsDefenseright = document.getElementById("winner-contests-defense-right");
+                const lossesContestsDefenseright = document.getElementById("losses-contests-defense-right");
+
+                // Atack Center
+                const correctShotsAtackCenter = document.getElementById("correct-shots-atack-center");
+                const incorrectShotsAtackCenter = document.getElementById("incorrect-shots-atack-center");
+                const correctPassesAtackCenter = document.getElementById("correct-passes-atack-center");
+                const incorrectPassesAtackCenter = document.getElementById("incorrect-passes-atack-center");
+                const correctDribblesAtackCenter = document.getElementById("correct-dribbles-atack-center");
+                const incorrectDribblesAtackCenter = document.getElementById("incorrect-dribbles-atack-center");
+                const winnerContestsAtackCenter = document.getElementById("winner-contests-atack-center");
+                const lossesContestsAtackCenter = document.getElementById("losses-contests-atack-center");
+
+                // Mid Center
+                const correctPassesMidCenter = document.getElementById("correct-passes-mid-center");
+                const incorrectPassesMidCenter = document.getElementById("incorrect-passes-mid-center");
+                const correctDribblesMidCenter = document.getElementById("correct-dribbles-mid-center");
+                const incorrectDribblesMidCenter = document.getElementById("incorrect-dribbles-mid-center");
+                const winnerContestsMidCenter = document.getElementById("winner-contests-mid-center");
+                const lossesContestsMidCenter = document.getElementById("losses-contests-mid-center");
+
+                // Defense Center
+                const correctPassesDefenseCenter = document.getElementById("correct-passes-defense-center");
+                const incorrectPassesDefenseCenter = document.getElementById("incorrect-passes-defense-center");
+                const correctDribblesDefenseCenter = document.getElementById("correct-dribbles-defense-center");
+                const incorrectDribblesDefenseCenter = document.getElementById("incorrect-dribbles-defense-center");
+                const winnerContestsDefenseCenter = document.getElementById("winner-contests-defense-center");
+                const lossesContestsDefenseCenter = document.getElementById("losses-contests-defense-center");
+
+                // Atack Left
+                const correctShotsAtackLeft = document.getElementById("correct-shots-atack-left");
+                const incorrectShotsAtackLeft = document.getElementById("incorrect-shots-atack-left");
+                const correctPassesAtackLeft = document.getElementById("correct-passes-atack-left");
+                const incorrectPassesAtackLeft = document.getElementById("incorrect-passes-atack-left");
+                const correctDribblesAtackLeft = document.getElementById("correct-dribbles-atack-left");
+                const incorrectDribblesAtackLeft = document.getElementById("incorrect-dribbles-atack-left");
+                const winnerContestsAtackLeft = document.getElementById("winner-contests-atack-left");
+                const lossesContestsAtackLeft = document.getElementById("losses-contests-atack-left");
+
+                // Mid Left
+                const correctPassesMidLeft = document.getElementById("correct-passes-mid-left");
+                const incorrectPassesMidLeft = document.getElementById("incorrect-passes-mid-left");
+                const correctDribblesMidLeft = document.getElementById("correct-dribbles-mid-left");
+                const incorrectDribblesMidLeft = document.getElementById("incorrect-dribbles-mid-left");
+                const winnerContestsMidLeft = document.getElementById("winner-contests-mid-left");
+                const lossesContestsMidLeft = document.getElementById("losses-contests-mid-left");
+
+                // Defense Left
+                const correctPassesDefenseLeft = document.getElementById("correct-passes-defense-left");
+                const incorrectPassesDefenseLeft = document.getElementById("incorrect-passes-defense-left");
+                const correctDribblesDefenseLeft = document.getElementById("correct-dribbles-defense-left");
+                const incorrectDribblesDefenseLeft = document.getElementById("incorrect-dribbles-defense-left");
+                const winnerContestsDefenseLeft = document.getElementById("winner-contests-defense-left");
+                const lossesContestsDefenseLeft = document.getElementById("losses-contests-defense-left");
 
                 // Function Load events from local storage and add to events list
                 function getEvents() {
@@ -809,6 +922,7 @@
                     // Array with all li tags
                     const eventListItens = document.querySelectorAll('li');
                     objStats = {};
+
                     // Add stats to objStats
                     eventListItens.forEach(item => {
                         const arrIemName = item.textContent.split('-');
@@ -856,7 +970,86 @@
                     foulsMade.textContent = objStats["DISPUTA - FALTA COMETIDA"] ? objStats["DISPUTA - FALTA COMETIDA"] : 0;
                     foulsSuffered.textContent = objStats["DRIBLE - SOFREU FALTA"] ? objStats["DRIBLE - SOFREU FALTA"] : 0;
                     yellowCard.textContent = "0";
-                    redCard.textContent = "0"
+                    redCard.textContent = "0";
+
+                    // Add stats to fields sectors
+                    // Atack Right
+                    correctShotsAtackright.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] : 0;
+                    incorrectShotsAtackright.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - DIREITA"] : 0;;
+                    correctPassesAtackright.textContent = objStats["PASSE - CERTO - ATAQUE - DIREITA"] ? objStats["PASSE - CERTO - ATAQUE - DIREITA"] : 0;
+                    incorrectPassesAtackright.textContent = objStats["PASSE - ERRADO - ATAQUE - DIREITA"] ? objStats["PASSE - ERRADO - ATAQUE - DIREITA"] : 0;
+                    correctDribblesAtackright.textContent = objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] ? objStats["DRIBLE - CERTO - ATAQUE - DIREITA"] : 0;
+                    incorrectDribblesAtackright.textContent = objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] ? objStats["DRIBLE - ERRADO - ATAQUE - DIREITA"] : 0;
+                    winnerContestsAtackright.textContent = objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] ? objStats["DISPUTA - GANHA - ATAQUE - DIREITA"] : 0;
+                    lossesContestsAtackright.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] ? objStats["DISPUTA - PERDIDA - ATAQUE - DIREITA"] : 0;
+
+                    // Mid Right
+                    correctPassesMidright.textContent = objStats["PASSE - CERTO - MEIO - DIREITA"] ? objStats["PASSE - CERTO - MEIO - DIREITA"] : 0;
+                    incorrectPassesMidright.textContent = objStats["PASSE - ERRADO - MEIO - DIREITA"] ? objStats["PASSE - ERRADO - MEIO - DIREITA"] : 0;
+                    correctDribblesMidright.textContent = objStats["PASSE - CERTO - MEIO - DIREITA"] ? objStats["PASSE - CERTO - MEIO - DIREITA"] : 0;
+                    incorrectDribblesMidright.textContent = objStats["PASSE - ERRADO - MEIO - DIREITA"] ? objStats["PASSE - ERRADO - MEIO - DIREITA"] : 0;
+                    winnerContestsMidright.textContent = objStats["DISPUTA - GANHA - MEIO - DIREITA"] ? objStats["DISPUTA - GANHA - MEIO - DIREITA"] : 0;
+                    lossesContestsMidright.textContent = objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] ? objStats["DISPUTA - PERDIDA - MEIO - DIREITA"] : 0;
+
+                    // Defense Right
+                    correctPassesDefenseright.textContent = objStats["PASSE - CERTO - DEFESA - DIREITA"] ? objStats["PASSE - CERTO - DEFESA - DIREITA"] : 0;
+                    incorrectPassesDefenseright.textContent = objStats["PASSE - ERRADO - DEFESA - DIREITA"] ? objStats["PASSE - ERRADO - DEFESA - DIREITA"] : 0;
+                    correctDribblesDefenseright.textContent = objStats["DRIBLE - CERTO - DEFESA - DIREITA"] ? objStats["DRIBLE - CERTO - DEFESA - DIREITA"] : 0;
+                    incorrectDribblesDefenseright.textContent = objStats["PASSES - ERRADO - DEFESA - DIREITA"] ? objStats["PASSES - ERRADO - DEFESA - DIREITA"] : 0;
+                    winnerContestsDefenseright.textContent = objStats["DISPUTA - GANHA - DEFESA - DIREITA"] ? objStats["DISPUTA - GANHA - DEFESA - DIREITA"] : 0;
+                    lossesContestsDefenseright.textContent = objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] ? objStats["DISPUTA - PERDIDA - DEFESA - DIREITA"] : 0;
+
+                    // Atack Center
+                    correctShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] : 0;;
+                    incorrectShotsAtackCenter.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - CENTRO"] : 0;;
+                    correctPassesAtackCenter.textContent = objStats["PASSE - CERTO - ATAQUE - CENTRO"] ? objStats["PASSE - CERTO - ATAQUE - CENTRO"] : 0;
+                    incorrectPassesAtackCenter.textContent = objStats["PASSE - ERRADO - ATAQUE - CENTRO"] ? objStats["PASSE - ERRADO - ATAQUE - CENTRO"] : 0;
+                    correctDribblesAtackCenter.textContent = objStats["PASSES - CERTO - ATAQUE - CENTRO"] ? objStats["PASSES - CERTO - ATAQUE - CENTRO"] : 0;
+                    incorrectDribblesAtackCenter.textContent = objStats["PASSES - ERRADO - ATAQUE - CENTRO"] ? objStats["PASSES - ERRADO - ATAQUE - CENTRO"] : 0;
+                    winnerContestsAtackCenter.textContent = objStats["DISPUTA - GANHA - ATAQUE - CENTRO"] ? objStats["DISPUTA - GANHA - ATAQUE - CENTRO"] : 0;
+                    lossesContestsAtackCenter.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - CENTRO"] ? objStats["DISPUTA - PERDIDA - ATAQUE - CENTRO"] : 0;
+
+                    // Mid Center
+                    correctPassesMidCenter.textContent = objStats["PASSE - CERTO - MEIO - CENTRO"] ? objStats["PASSE - CERTO - MEIO - CENTRO"] : 0;
+                    incorrectPassesMidCenter.textContent = objStats["PASSE - ERRADO - MEIO - CENTRO"] ? objStats["PASSE - ERRADO - MEIO - CENTRO"] : 0;
+                    correctDribblesMidCenter.textContent = objStats["PASSES - CERTO - MEIO - CENTRO"] ? objStats["PASSES - CERTO - MEIO - CENTRO"] : 0;
+                    incorrectDribblesMidCenter.textContent = objStats["PASSES - ERRADO - MEIO - CENTRO"] ? objStats["PASSES - ERRADO - MEIO - CENTRO"] : 0;
+                    winnerContestsMidCenter.textContent = objStats["DISPUTA - GANHA - MEIO - CENTRO"] ? objStats["DISPUTA - GANHA - MEIO - CENTRO"] : 0;
+                    lossesContestsMidCenter.textContent = objStats["DISPUTA - PERDIDA - MEIO - CENTRO"] ? objStats["DISPUTA - PERDIDA - MEIO - CENTRO"] : 0;
+
+                    // Defense Center
+                    correctPassesDefenseCenter.textContent = objStats["PASSE - CERTO - DEFESA - CENTRO"] ? objStats["PASSE - CERTO - DEFESA - CENTRO"] : 0;
+                    incorrectPassesDefenseCenter.textContent = objStats["PASSE - ERRADO - DEFESA - CENTRO"] ? objStats["PASSE - ERRADO - DEFESA - CENTRO"] : 0;
+                    correctDribblesDefenseCenter.textContent = objStats["PASSES - CERTO - DEFESA - CENTRO"] ? objStats["PASSES - CERTO - DEFESA - CENTRO"] : 0;
+                    incorrectDribblesDefenseCenter.textContent = objStats["PASSES - ERRADO - DEFESA - CENTRO"] ? objStats["PASSES - ERRADO - DEFESA - CENTRO"] : 0;
+                    winnerContestsDefenseCenter.textContent = objStats["DISPUTA - GANHA - DEFESA - CENTRO"] ? objStats["DISPUTA - GANHA - DEFESA - CENTRO"] : 0;
+                    lossesContestsDefenseCenter.textContent = objStats["DISPUTA - PERDIDA - DEFESA - CENTRO"] ? objStats["DISPUTA - PERDIDA - DEFESA - CENTRO"] : 0;
+
+                    // Atack Left
+                    correctShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] : 0;;
+                    incorrectShotsAtackLeft.textContent = objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] ? objStats["FINALIZAÇÃO - NO GOL - ATAQUE - ESQUERDA"] : 0;;
+                    correctPassesAtackLeft.textContent = objStats["PASSE - CERTO - ATAQUE - ESQUERDA"] ? objStats["PASSE - CERTO - ATAQUE - ESQUERDA"] : 0;
+                    incorrectPassesAtackLeft.textContent = objStats["PASSE - ERRADO - ATAQUE - ESQUERDA"] ? objStats["PASSE - ERRADO - ATAQUE - ESQUERDA"] : 0;
+                    correctDribblesAtackLeft.textContent = objStats["PASSES - CERTO - ATAQUE - DIREITA"] ? objStats["PASSES - CERTO - ATAQUE - ESQUERDA"] : 0;
+                    incorrectDribblesAtackLeft.textContent = objStats["PASSES - ERRADO - ATAQUE - ESQUERDA"] ? objStats["PASSES - ERRADO - ATAQUE - ESQUERDA"] : 0;
+                    winnerContestsAtackLeft.textContent = objStats["DISPUTA - GANHA - ATAQUE - ESQUERDA"] ? objStats["DISPUTA - GANHA - ATAQUE - ESQUERDA"] : 0;
+                    lossesContestsAtackLeft.textContent = objStats["DISPUTA - PERDIDA - ATAQUE - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - ATAQUE - ESQUERDA"] : 0;
+
+                    // Mid Left
+                    correctPassesMidLeft.textContent = objStats["PASSE - CERTO - MEIO - ESQUERDA"] ? objStats["PASSE - CERTO - MEIO - ESQUERDA"] : 0;
+                    incorrectPassesMidLeft.textContent = objStats["PASSE - ERRADO - MEIO - ESQUERDA"] ? objStats["PASSE - ERRADO - MEIO - ESQUERDA"] : 0;
+                    correctDribblesMidLeft.textContent = objStats["PASSES - CERTO - MEIO - ESQUERDA"] ? objStats["PASSES - CERTO - MEIO - ESQUERDA"] : 0;
+                    incorrectDribblesMidLeft.textContent = objStats["PASSES - ERRADO - MEIO - ESQUERDA"] ? objStats["PASSES - ERRADO - MEIO -ESQUERDAA"] : 0;
+                    winnerContestsMidLeft.textContent = objStats["DISPUTA - GANHA - MEIO - ESQUERDA"] ? objStats["DISPUTA - GANHA - MEIO - ESQUERDA"] : 0;
+                    lossesContestsMidLeft.textContent = objStats["DISPUTA - PERDIDA - MEIO - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - MEIO - ESQUERDA"] : 0;
+
+                    // Defense Left
+                    correctPassesDefenseLeft.textContent = objStats["PASSE - CERTO - DEFESA - ESQUERDA"] ? objStats["PASSE - CERTO - DEFESA - ESQUERDA"] : 0;
+                    incorrectPassesDefenseLeft.textContent = objStats["PASSE - ERRADO - DEFESA - ESQUERDA"] ? objStats["PASSE - ERRADO - DEFESA -ESQUERDA"] : 0;
+                    correctDribblesDefenseLeft.textContent = objStats["PASSES - CERTO - DEFESA - ESQUERDA"] ? objStats["PASSES - CERTO - DEFESA - ESQUERDA"] : 0;
+                    incorrectDribblesDefenseLeft.textContent = objStats["PASSES - ERRADO - DEFESA - ESQUERDA"] ? objStats["PASSES - ERRADO - DEFESA - ESQUERDA"] : 0;
+                    winnerContestsDefenseLeft.textContent = objStats["DISPUTA - GANHA - DEFESA - ESQUERDA"] ? objStats["DISPUTA - GANHA - DEFESA - ESQUERDA"] : 0;
+                    lossesContestsDefenseLeft.textContent = objStats["DISPUTA - PERDIDA - DEFESA - ESQUERDA"] ? objStats["DISPUTA - PERDIDA - DEFESA - ESQUERDA"] : 0;
                 };
 
                 // Save  eventon local storage function
