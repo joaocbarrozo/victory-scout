@@ -21,6 +21,9 @@
             width: 60%;
             margin-left: 20%;
         }
+        .bg-black {
+            background-color: black;
+        }
     </style>
 </head>
 
@@ -28,21 +31,21 @@
     <!-- Body container -->
     <div id="body-container" class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 m-2 mx-auto ">
         <div id="header-container" class="m-1">
-            <h1 id="header-text" class="bg-primary text-center text-light m-1">Nome do Jogador</h1>
+            <h1 id="header-text" class="bg-black text-center text-light m-1 p-1"> <img src="https://static.wixstatic.com/media/ad64fa_9b590e7e83364f4682666872b414f10a~mv2.png/v1/fill/w_255,h_68,al_c,q_85,enc_avif,quality_auto/logo.png" alt="logo.png" style="width:255px;height:68px;object-fit:cover" width="255" height="68" srcset="https://static.wixstatic.com/media/ad64fa_9b590e7e83364f4682666872b414f10a~mv2.png/v1/fill/w_255,h_68,al_c,q_85,enc_avif,quality_auto/logo.png 1x, https://static.wixstatic.com/media/ad64fa_9b590e7e83364f4682666872b414f10a~mv2.png/v1/fill/w_357,h_95,al_c,lg_1,q_85,enc_avif,quality_auto/logo.png 2x" fetchpriority="high">Nome do Jogador</h1>
             <h2 id="game-text" class="bg-secondary text-center text-light m-1"> Time X Adversário</h2>
             <h3 id="game-details-text" class="bg-secondary text-center text-light m-1">Local data e horário</h3>
         </div>
         <!-- Controls container-->
         <div id="controls-container" class="d-flex flex-wrap justify-content-center mx-auto">
-            <button id="btn-pass" class="btn btn-primary m-1" data-bs-toggle="modal"
+            <button id="btn-pass" class="btn btn-secondary m-1" data-bs-toggle="modal"
                 data-bs-target="#pass-modal">PASSE</button>
-            <button id="btn-dribble" class="btn btn-primary m-1" data-bs-toggle="modal"
+            <button id="btn-dribble" class="btn btn-secondary m-1" data-bs-toggle="modal"
                 data-bs-target="#dribble-modal">DRIBLE</button>
-            <button id="btn-shot" class="btn btn-primary m-1" data-bs-toggle="modal"
+            <button id="btn-shot" class="btn btn-secondary m-1" data-bs-toggle="modal"
                 data-bs-target="#shot-modal">FINALIZAÇÃO</button>
-            <button id="btn-contest" class="btn btn-primary m-1" data-bs-toggle="modal"
+            <button id="btn-contest" class="btn btn-secondary m-1" data-bs-toggle="modal"
                 data-bs-target="#contest-modal">DISPUTA</button>
-            <button id="btn-stats" class="btn btn-primary m-1" data-bs-toggle="modal"
+            <button id="btn-stats" class="btn btn-secondary m-1" data-bs-toggle="modal"
                 data-bs-target="#stats-modal">ESTATISTICAS</button>
         </div>
         <!-- Pass modal-->
@@ -92,8 +95,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="btn-save-pass" type="button" class="btn btn-primary"
+                        <button type="button" class="btn btn-soutline-econdary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btn-save-pass" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Salvar</button>
                     </div>
                 </div>
@@ -145,8 +148,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="btn-save-dribble" type="button" class="btn btn-primary"
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btn-save-dribble" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Salvar</button>
                     </div>
                 </div>
@@ -198,8 +201,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="btn-save-shot" type="button" class="btn btn-primary"
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btn-save-shot" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Salvar</button>
                     </div>
                 </div>
@@ -251,8 +254,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button id="btn-save-contest" type="button" class="btn btn-primary"
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btn-save-contest" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Salvar</button>
                     </div>
                 </div>
@@ -283,7 +286,7 @@
 
         <!-- Events container-->
         <div id="events-container" class="vw-95 m-1 mx-auto">
-            <h3 id="events-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
+            <h3 id="events-text" class="text-center bg-black text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#events-list-container">Lances</h3>
             <div id="events-list-container" class="collapse">
                 <ol id="events-list" class="list-group justify-content-center">
@@ -327,7 +330,7 @@
         </div>
         <!-- Stats container-->
         <div id="stats-container" class="vw-95 m-1 mx-auto">
-            <h3 id="stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
+            <h3 id="stats-text" class="text-center bg-black text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#stats-resume-table-container">Estatísticas</h3>
             <div id="stats-resume-table-container" class="collapse show">
                 <table id="stats-resume-table" class="table table-responsive table-hover">
@@ -385,7 +388,7 @@
         </div>
         <!-- Field stats container-->
         <div id="field -stats-container" class="vw-95 m-1 mx-auto">
-            <h3 id="field-stats-text" class="text-center bg-primary text-light m-1" data-bs-toggle="collapse"
+            <h3 id="field-stats-text" class="text-center bg-black text-light m-1" data-bs-toggle="collapse"
                 data-bs-target="#field-stats-container">Setores do Campo</h3>
             <div id="field-stats-container" class="collapse">
                 <div id="field" style="color: aliceblue;">
